@@ -33,7 +33,7 @@ public class CrawlingMain {
                     String title = imgElement.attr("alt");
                     String[] titleParts = title.split(" - ");
                     title = titleParts[0];
-                    System.out.println(title);
+//                    System.out.println(title);
                 }
 
 
