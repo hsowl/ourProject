@@ -1,6 +1,6 @@
 package com.example.ourproject.controller.action;
 
-import com.example.ourproject.VO.ProductVO;
+import com.example.ourproject.VO.CartVO;
 import com.example.ourproject.dao.DAO;
 import jakarta.servlet.RequestDispatcher;
 import jakarta.servlet.ServletException;
@@ -9,19 +9,26 @@ import jakarta.servlet.http.HttpServletResponse;
 
 import java.io.IOException;
 
-public class productDetail implements Action{
+public class CartAction implements Action{
+
     @Override
     public void execute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        int no = Integer.parseInt(request.getParameter("no"));
+        String url = "myCart.jsp";
 
-        DAO Dao = DAO.getInstance();
+        String id = request.getParameter("id");
 
-        ProductVO vo = Dao.selectOneProductByNo(no);
-        String url = "productDetail.jsp";
+        DAO dao = DAO.getInstance();
+
+        CartVO vo = dao.cartSelect(id);
+
+//        특정 id의 cart테이블의 product의 정보를 모두 빼와야함.
 
         request.setAttribute("product",vo);
 
-        RequestDispatcher dis = request.getRequestDispatcher(url);
-        dis.forward(request,response);
+        RequestDispatcher dis =request.getRequestDispatcher(url);
+        dis.forward(request, response);
+
+
     }
+
 }

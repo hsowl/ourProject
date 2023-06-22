@@ -19,16 +19,16 @@
         <table>
             <tr>
                 <td>
-                    <img src="$product.image">
+                    <img src="${product.image}">
                 <td>
                     <table>
                         <tr align="center">
                             <td>상품명</td>
-                            <td>$product.title</td>
+                            <td>${product.title}</td>
                         </tr>
                         <tr align="center">
                             <td>가격</td>
-                            <td><fmt:formatNumber value="$product.price" pattern="###,###,###"/> </td>
+                            <td><fmt:formatNumber value="${product.price}" pattern="###,###,###"/> </td>
                         </tr>
                         <tr align="center">
                             <td colspan="3">
