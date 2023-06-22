@@ -85,4 +85,29 @@ public class DAO {
         return vo;
     }
 
+    public int insertBoard(CartVO vo) {
+        int result = -1;
+        String sql = "insert into cart (id,no) values(?,?)";
+        Connection conn = null;
+        PreparedStatement pstmt = null;
+        ResultSet rs = null;
+
+        try {
+            conn = DBManager.getConnection();
+            pstmt=conn.prepareStatement(sql);
+            pstmt.setString(1, vo.getId());
+            pstmt.setInt(2,vo.getNo());
+            result=pstmt.executeUpdate();
+
+        }catch(Exception e) {
+            e.printStackTrace();
+        }finally {
+            try {
+                DBManager.close(conn,pstmt);
+            }catch(Exception e) {
+                e.printStackTrace();
+            }
+        }
+        return result;
+    }
 }
