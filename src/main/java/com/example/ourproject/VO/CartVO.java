@@ -10,4 +10,7 @@ import lombok.ToString;
 public class CartVO {
     private String id;
     private int no;
+    private String title;
+    private int price;
+    private String image;
 }
