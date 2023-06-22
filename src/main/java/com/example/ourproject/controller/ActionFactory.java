@@ -1,7 +1,7 @@
 package com.example.ourproject.controller;
 
 import com.example.ourproject.controller.action.Action;
-import com.example.ourproject.controller.action.loginAction;
+import com.example.ourproject.controller.action.JoinMemberAction;
 import com.example.ourproject.controller.action.myInfoAction;
 
 public class ActionFactory {
@@ -22,7 +22,7 @@ public class ActionFactory {
         }else if(command.equals("login")) {
             action = new loginAction();
         }else if(command.equals("joinMember")) {
-            action = new joinMemberAction();
+            action = new JoinMemberAction();
         }
 
 
