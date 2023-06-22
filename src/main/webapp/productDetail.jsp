@@ -32,8 +32,8 @@
                         </tr>
                         <tr align="center">
                             <td colspan="3">
-                                <form name="form1" method="post" action="">
-                                    <input type="hidden" name="productno" value="$no">
+                                <form name="form1" method="post" action="Servlet">
+                                    <input type="hidden" name="command" value="cartUpdate">
                                     <select name="amount">
                                         <c:forEach begin="1" end="10" var="i">
                                             <option value="${i}">${i}</option>
