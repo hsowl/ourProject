@@ -11,28 +11,29 @@
     <title>Title</title>
 </head>
 <body>
-  <h2>로그인</h2>
-  <form name="frm" method="post" action="login.do">
-    <table>
-      <tr>
-        <td>아이디</td>
-        <td><input type="text" name="userid" value="${userid}"></td>
-      </tr>
-      <tr>
-        <td>비밀번호</td>
-        <td><input type="password" name="pwd"></td>
-      </tr>
-      <tr>
-        <td colspan="2" align="center">
-          <input type="submit" value="로그인" onclick="return loginCheck()">&nbsp;&nbsp;
-          <input type="reset" value="취소">&nbsp;&nbsp;
-          <input type="button" value="회원가입" onclick="location.href='join.do'">
-        </td>
-      </tr>
-      <tr>
-        <td colspan="2">${message}</td>
-      </tr>
-    </table>
-  </form>
+<h2>로그인</h2>
+<form name="frm" method="post" action="Servlet">
+  <input type="hidden" name="command" value="login">
+  <table>
+    <tr>
+      <td>아이디</td>
+      <td><input type="text" name="id" value="${id}"></td>
+    </tr>
+    <tr>
+      <td>비밀번호</td>
+      <td><input type="password" name="pw"></td>
+    </tr>
+    <tr>
+      <td colspan="2" align="center">
+        <input type="submit" value="로그인" onclick="return loginCheck()">&nbsp;&nbsp;
+        <input type="reset" value="취소">&nbsp;&nbsp;
+        <input type="button" value="회원가입" onclick="location.href='join.do'">
+      </td>
+    </tr>
+    <tr>
+      <td colspan="2">${message}</td>
+    </tr>
+  </table>
+</form>
 </body>
 </html>

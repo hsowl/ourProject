@@ -1,9 +1,6 @@
 package com.example.ourproject.controller;
 
-import com.example.ourproject.controller.action.Action;
-import com.example.ourproject.controller.action.joinMemberAction;
-import com.example.ourproject.controller.action.loginAction;
-import com.example.ourproject.controller.action.myInfoAction;
+import com.example.ourproject.controller.action.*;
 
 public class ActionFactory {
 
@@ -24,6 +21,8 @@ public class ActionFactory {
             action = new loginAction();
         }else if(command.equals("joinMember")) {
             action = new joinMemberAction();
+        }else if(command.equals("cartUpdate")){
+            action = new cartUpdateAction();
         }
 
 
