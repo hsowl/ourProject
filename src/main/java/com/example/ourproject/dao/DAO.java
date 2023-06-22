@@ -14,5 +14,6 @@ public class DAO {
     }
 
     public ProductVO selectOneProductByNo(int no) {
+        return new ProductVO();
     }
 }
