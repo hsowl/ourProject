@@ -1,4 +1,4 @@
-package com.example.ourproject.controller;
+package com.example.ourproject.controller.action;
 
 import com.example.ourproject.controller.action.Action;
 import jakarta.servlet.ServletException;
