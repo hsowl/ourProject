@@ -9,7 +9,7 @@ import java.sql.Timestamp;
 @Getter
 @Setter
 @ToString
-public class orderSearchVO {
+public class OrderSearchVO {
     private String id;
     private int no;
     private Timestamp orderDate;
