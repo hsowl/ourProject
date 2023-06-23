@@ -44,7 +44,7 @@ function idCheck(){
         return false;
     }
 
-    var url = "Servlet?id=" + document.frm.id.value;
+    var url = "Servlet?command=idCheck"  // + document.frm.id.value;
     window.open(url, "_blank_1", "toolbar=no, menubar=no, scrollbars=yes, resizable=no, width=450, height=200");
 }
 
