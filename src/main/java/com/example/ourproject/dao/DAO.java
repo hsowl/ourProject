@@ -48,7 +48,7 @@ public class DAO {
         }finally {
             DBManager.close(conn,pstmt,rs);
         }
-        return new ProductVO();
+        return vo;
     }
 
     public CartVO cartSelect(String id) {
