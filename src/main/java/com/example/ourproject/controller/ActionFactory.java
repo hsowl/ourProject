@@ -29,8 +29,11 @@ public class ActionFactory {
             action = new productDetailAction();
         }else if (command.equals("Board_write_form")) {
             action = new boardWriteAction();
+        }else if (command.equals("orderSearch")) {
+            action = new orderSearchAction();
+        }else if (command.equals("cart")) {
+            action = new cartAction();
         }
-
         return action;
     }
 
