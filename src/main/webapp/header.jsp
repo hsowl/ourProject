@@ -58,8 +58,8 @@
                     <c:when test="${id != null}">
                     </c:when>
                     <c:otherwise>
-                        <li><a href="#">로그인</a></li>
-                        <li><a href="#">회원가입</a></li>
+                        <li><a href="login.jsp">로그인</a></li>
+                        <li><a href="joinMember.jsp">회원가입</a></li>
                     </c:otherwise>
                 </c:choose>
             </ul>

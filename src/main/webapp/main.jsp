@@ -7,6 +7,7 @@
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <%@ include file="header.jsp"%>
 <link rel="stylesheet" type="text/css" href="css/style.css">
 <html>
@@ -15,17 +16,15 @@
 </head>
 <body>
 <div id="jongjin" align="center">
-    <table class="list">
-        <tr>
-            <td>제품명</td>
-            <td>가격</td>
-            <td>사진</td>
-        </tr>
+    <table border="1px" class="list">
         <c:forEach var="product" items="${product}">
             <tr class="product">
-                <td><a href="Servlet?command=productDetail&no=${product.no}">${product.title}</a></td>
-                <td>${product.price}원</td>
                 <td><img src = ${product.image}></td>
+                <td>
+                    <a href="Servlet?command=productDetail&no=${product.no}">${product.title}</a>
+                    <br><br><br>
+                    <fmt:formatNumber value="${product.price}" pattern="###,###,###"/>원
+                </td>
             </tr>
         </c:forEach>
     </table>
