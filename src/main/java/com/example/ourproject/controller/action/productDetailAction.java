@@ -20,7 +20,7 @@ public class productDetailAction implements Action{
         String url = "productDetail.jsp";
 
         request.setAttribute("product",vo);
-
+        //이성진
         RequestDispatcher dis = request.getRequestDispatcher(url);
         dis.forward(request,response);
     }

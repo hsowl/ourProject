@@ -25,8 +25,12 @@ public class ActionFactory {
             action = new cartUpdateAction();
         }else if (command.equals("main")) {
             action = new MainAction();
-        }else if (command.equals("productdetail")) {
+        }else if (command.equals("productDetail")) {
             action = new productDetailAction();
+        }else if (command.equals("productDetail")) {
+            action = new productDetailAction();
+        } else if (command.equals("QA_write_form")) {
+            action = new QAWriteAction();
         }
 
         return action;
