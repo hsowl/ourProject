@@ -1,6 +1,7 @@
 package com.example.ourproject.controller.action;
 
 import com.example.ourproject.dao.DAO;
+import jakarta.servlet.RequestDispatcher;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
@@ -12,7 +13,8 @@ public class myInfoAction implements Action {
     public void execute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String url = "myInfo.jsp";
 
-        DAO dao = DAO.getInstance();
+        RequestDispatcher dis = request.getRequestDispatcher(url);
+        dis.forward(request,response);
 
     }
 }

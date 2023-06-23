@@ -28,7 +28,7 @@
                 <ul>
                     <c:choose>
                         <c:when test="${id != null}">
-                            <li><a href="Servlet?command=myInfo">나의정보</a></li>
+                            <li><a href="Servlet?command=my_Info">나의정보</a></li>
                             <li><a href="Servlet?command=orderSearch">주문조회</a></li>
                             <li><a href="Servlet?command=cart">장바구니</a></li>
                         </c:when>
@@ -56,6 +56,7 @@
                 </li>
                 <c:choose>
                     <c:when test="${id != null}">
+                        <li>${id.id}님 안녕하세요</li>
                     </c:when>
                     <c:otherwise>
                         <li><a href="login.jsp">로그인</a></li>
