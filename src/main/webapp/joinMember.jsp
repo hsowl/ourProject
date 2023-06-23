@@ -13,7 +13,8 @@
 <body>
 <h2>회원 가입</h2>
 '*' 표시 항목은 필수 입력 항목입니다.
-<form action="Servlet" method="post" name="frm">
+<form action="Servlet" method="get" name="frm">
+    <input type="hidden" name="command" value="joinMember">
     <table>
         <tr>
             <td>이름</td>
@@ -22,22 +23,22 @@
         <tr>
             <td>아이디</td>
             <td>
-                <input type="text" name="userid" size=20 id="userid">*
+                <input type="text" name="id" size=20 id="id">*
                 <input type="hidden" name="reid" size=20>
                 <input type="button" value="중복체크" onclick="idCheck()">
             </td>
         </tr>
         <tr>
             <td>비밀번호</td>
-            <td><input type="password" name="pwd" size=20>*</td>
+            <td><input type="password" name="pw" size=20>*</td>
         </tr>
         <tr>
             <td>비밀번호 확인</td>
-            <td><input type="password" name="pwd_check" size=20>*</td>
+            <td><input type="password" name="pw_check" size=20>*</td>
         </tr>
         <tr>
-            <td>생년월일</td>
-            <td><input type="date" name="birthdate"></td>
+            <td>주민등록번호</td>
+            <td><input type="text" name="birthDate">앞 6자리만 입력해 주세요</td> <%-- js에서 6자리 넘어가면 체크하게 --%>
         </tr>
         <tr>
             <td>이메일</td>
