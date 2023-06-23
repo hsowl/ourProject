@@ -258,8 +258,8 @@ public class DAO {
         }
         return vo;
     }
-    public CartVO cartSelect(String id) {
-
+    public List<CartVO> cartSelect(String id) {
+        List<CartVO> list = new ArrayList<CartVO>();
         Connection conn = null;
         PreparedStatement pstmt = null;
         ResultSet rs = null;
@@ -279,6 +279,7 @@ public class DAO {
                 cvo.setPrice(pvo.getPrice());
                 cvo.setNo(rs.getInt("no"));
                 cvo.setId(rs.getString("id"));
+                list.add(cvo);
             }
 
         } catch (Exception e) {
@@ -286,7 +287,6 @@ public class DAO {
         } finally {
             DBManager.close(conn, pstmt, rs);
         }
-        return cvo;
+        return list;
     }
-
 }

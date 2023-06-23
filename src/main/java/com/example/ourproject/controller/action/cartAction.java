@@ -8,6 +8,7 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 
 import java.io.IOException;
+import java.util.List;
 
 public class cartAction implements Action{
 
@@ -19,11 +20,11 @@ public class cartAction implements Action{
 
         DAO dao = DAO.getInstance();
 
-        CartVO vo = dao.cartSelect(id);
+        List<CartVO> list = dao.cartSelect(id);
 
 //        특정 id의 cart테이블의 product의 정보를 모두 빼와야함.
 
-        request.setAttribute("product",vo);
+        request.setAttribute("product",list);
 
         RequestDispatcher dis =request.getRequestDispatcher(url);
         dis.forward(request, response);

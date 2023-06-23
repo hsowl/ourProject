@@ -33,7 +33,7 @@
                             <td colspan="3">
                                 <form name="form1" method="post" action="Servlet">
                                     <input type="hidden" name="command" value="cartUpdate">
-                                    <input type="submit" value="장바구니에 담기" onclick="return cartCheck()">
+                                    <input type="submit" value="장바구니에 담기" onclick="return script/cartCheck()">
                                 </form>
                             </td>
                         </tr>
