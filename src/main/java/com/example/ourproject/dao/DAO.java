@@ -47,10 +47,6 @@ public class DAO {
         }
         return vo;
     }
-
-    public CartVO cartSelect(String id) {
-        return new CartVO();
-    }
     public int insertMember(MemberVO vo) {
 
         int result = -1;
@@ -261,6 +257,31 @@ public class DAO {
             }
         }
         return vo;
+    }
+    public CartVO cartSelect(String id) {
+
+        Connection conn = null;
+        PreparedStatement pstmt = null;
+        ResultSet rs = null;
+
+        CartVO cvo = new CartVO();
+        String sql = "select * from cart where id=?";
+
+        try {
+            conn = DBManager.getConnection();
+            pstmt = conn.prepareStatement(sql);
+            rs = pstmt.executeQuery();
+            while (rs.next()) {
+                cvo.setNo(rs.getInt("no"));
+                cvo.setId(rs.getString("id"));
+            }
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            DBManager.close(conn, pstmt, rs);
+        }
+        return cvo;
     }
 
 }
