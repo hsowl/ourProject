@@ -9,6 +9,7 @@ import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.HttpSession;
 
 import java.io.IOException;
+import java.sql.Timestamp;
 
 public class joinMemberAction implements Action {
 
@@ -26,13 +27,15 @@ public class joinMemberAction implements Action {
         vo.setGender(request.getParameter("gender"));
         vo.setPhone(request.getParameter("phone"));
 
+        System.out.println(vo.getBirthDate());
+
         DAO dao = DAO.getInstance();
         int result = dao.insertMember(vo); //DAO 통해 DB접속
 
         HttpSession session = request.getSession();
         if(result == 1){
             session.setAttribute("id", vo.getId());
-            request.setAttribute("message", "회원가입이 완료되었습니다.<br>로그인 페이지로 이동합니다.");
+            request.setAttribute("message", "회원가입이 완료되었습니다.<br>로그인 해주세요.");
         }else {
             request.setAttribute("message", "회원가입을 진행해 주세요.");
         }
