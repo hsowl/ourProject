@@ -34,11 +34,6 @@
                             <td colspan="3">
                                 <form name="form1" method="post" action="Servlet">
                                     <input type="hidden" name="command" value="cartUpdate">
-                                    <select name="amount">
-                                        <c:forEach begin="1" end="10" var="i">
-                                            <option value="${i}">${i}</option>
-                                        </c:forEach>
-                                    </select>&nbsp;개
                                     <input type="submit" value="장바구니에 담기" onclick="return cartCheck()">
                                 </form>
                             </td>
@@ -47,7 +42,6 @@
                 </td>
             </tr>
         </table>
-        <br> <input type="button" value="목록" onclick="location.href='movieList.do'">
     </form>
 </div>
 </body>
