@@ -162,7 +162,7 @@ public class DAO {
     public List<QAVO> selectAllBoard() {
         List<QAVO> list = new ArrayList<QAVO>();
 
-        String sql = "select * from QA order by num";
+        String sql = "select * from QA order by no";
         Connection conn = null;
         PreparedStatement pstmt = null;
         ResultSet rs = null;
@@ -288,5 +288,32 @@ public class DAO {
             DBManager.close(conn, pstmt, rs);
         }
         return list;
+    }
+
+    public int confirmID(String id) {
+        int result = -1;
+        String sql = "select id from member where id=?";
+        Connection conn = null;
+        PreparedStatement pstmt = null;
+        ResultSet rs = null;
+
+        try {
+            conn = DBManager.getConnection();
+            pstmt = conn.prepareStatement(sql);
+            pstmt.setString(1, id);
+
+            rs = pstmt.executeQuery();
+
+            if (rs.next()) {
+                result = 1;
+            } else {
+                result = -1;
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            DBManager.close(conn, pstmt, rs);
+        }
+        return result;
     }
 }

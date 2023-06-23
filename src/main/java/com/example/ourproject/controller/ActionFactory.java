@@ -33,7 +33,9 @@ public class ActionFactory {
             action = new orderSearchAction();
         }else if (command.equals("cart")) {
             action = new cartAction();
-        }
+        }else if (command.equals("idCheck")) {
+        action = new idCheckAction();
+    }
         return action;
     }
 
