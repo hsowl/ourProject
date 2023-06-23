@@ -48,6 +48,9 @@ public class DAO {
         return vo;
     }
 
+    public CartVO cartSelect(String id) {
+        return new CartVO();
+    }
     public int insertMember(MemberVO vo) {
 
         int result = -1;
