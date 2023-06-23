@@ -48,19 +48,19 @@
     <table class="list">
         <tr>
             <td colspan="3" style="border: white; text-align: right"><a
-                    href="Servlet?command=QA_write_form">게시글 등록</a></td>
+                    href="Servlet?command=Board_write_form">게시글 등록</a></td>
         </tr>
         <tr>
             <th>번호</th>
             <th>제목</th>
             <th>내용</th>
         </tr>
-        <c:forEach var="QA" items="${QandA}">
+        <c:forEach var="board" items="${boardList}">
             <tr class="record">
-                <td>${QA.no }</td>
-                <td><a href="BoardServlet?command=board_view&no${QA.no}">
-                        ${QA.title } </a></td>
-                <td>${QA.content}</td>
+                <td>${board.no }</td>
+                <td><a href="Servlet?command=board_view&no${board.no}">
+                        ${board.title } </a></td>
+                <td>${board.content}</td>
             </tr>
         </c:forEach>
     </table>

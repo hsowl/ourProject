@@ -28,14 +28,14 @@
                 <ul>
                     <c:choose>
                         <c:when test="${id != null}">
-                            <li><a href="BoardServlet?command=myInfo">나의정보</a></li>
-                            <li><a href="BoardServlet?command=orderSearch">주문조회</a></li>
-                            <li><a href="BoardServlet?command=cart">장바구니</a></li>
+                            <li><a href="Servlet?command=myInfo">나의정보</a></li>
+                            <li><a href="Servlet?command=orderSearch">주문조회</a></li>
+                            <li><a href="Servlet?command=cart">장바구니</a></li>
                         </c:when>
                         <c:otherwise>
-                            <li><a href="BoardServlet?command=login">나의정보</a></li>
-                            <li><a href="BoardServlet?command=login">주문조회</a></li>
-                            <li><a href="BoardServlet?command=login">장바구니</a></li>
+                            <li><a href="Servlet?command=login">나의정보</a></li>
+                            <li><a href="Servlet?command=login">주문조회</a></li>
+                            <li><a href="Servlet?command=login">장바구니</a></li>
                         </c:otherwise>
                     </c:choose>
                 </ul>

@@ -29,8 +29,8 @@ public class ActionFactory {
             action = new productDetailAction();
         }else if (command.equals("productDetail")) {
             action = new productDetailAction();
-        } else if (command.equals("QA_write_form")) {
-            action = new QAWriteAction();
+        } else if (command.equals("Board_write_form")) {
+            action = new boardWriteAction();
         }
 
         return action;
