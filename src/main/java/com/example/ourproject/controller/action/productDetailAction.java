@@ -9,7 +9,7 @@ import jakarta.servlet.http.HttpServletResponse;
 
 import java.io.IOException;
 
-public class productDetail implements Action{
+public class productDetailAction implements Action{
     @Override
     public void execute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         int no = Integer.parseInt(request.getParameter("no"));
