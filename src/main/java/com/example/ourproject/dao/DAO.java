@@ -190,5 +190,77 @@ public class DAO {
         }
         return list;
     }
-    
+    public int userCheck(String id, String pw) {
+        int result = -1;
+
+        String sql = "select pw from member where id=?";
+        Connection conn = null;
+        PreparedStatement pstmt = null;
+        ResultSet rs = null;
+
+        try {
+            conn = DBManager.getConnection();
+            pstmt = conn.prepareStatement(sql);
+            pstmt.setString(1, id);
+
+            rs = pstmt.executeQuery();
+
+            if(rs.next()) { //id가 기본키이기 때문에 while문 돌릴필요 없다.
+                String getpw = rs.getString("pw");
+                if(getpw != null && getpw.equals(pw)) {
+                    result = 1; //id, pw ==> ok
+                }else {
+                    result = 0; //id ==> ok, pw ==> false
+                }
+            }else {
+                result = -1; //id ==> false
+            }
+
+        }catch (Exception e) {
+            e.printStackTrace();
+        }finally {
+            DBManager.close(conn,pstmt,rs);
+        }
+        return result;
+    }
+    public MemberVO getMember(String id) {
+        MemberVO vo = null;
+
+        String sql = "select * from member where id=?";
+        Connection conn = null;
+        PreparedStatement pstmt = null;
+        ResultSet rs = null;
+
+        try {
+            conn = DBManager.getConnection();
+            pstmt = conn.prepareStatement(sql);
+            pstmt.setString(1,id);
+            rs = pstmt.executeQuery();
+
+            if(rs.next()) {
+                vo = new MemberVO();
+
+                vo.setId(rs.getString("id"));
+                vo.setPw(rs.getString("pw"));
+                vo.setEmail(rs.getString("email"));
+                vo.setName(rs.getString("name"));
+                vo.setBirthDate(rs.getString("birthDate"));
+                vo.setGender(rs.getString("gender"));
+                vo.setPhone(rs.getString("phone"));
+
+            }
+        }catch(Exception e) {
+            e.printStackTrace();
+        }finally {
+            try {
+                if (rs != null) rs.close();
+                if (pstmt != null) pstmt.close();
+                if (conn != null) conn.close();
+            }catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
+        return vo;
+    }
+
 }
