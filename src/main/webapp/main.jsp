@@ -23,9 +23,9 @@
         </tr>
         <c:forEach var="product" items="${product}">
             <tr class="product">
-                <td><a href="Servlet?command=productDetail">${product.title}</a></td>
+                <td><a href="Servlet?command=productDetail&no=${product.no}">${product.title}</a></td>
                 <td>${product.price}원</td>
-                <td>${product.image}</td>
+                <td><img src = ${product.image}></td>
             </tr>
         </c:forEach>
     </table>
