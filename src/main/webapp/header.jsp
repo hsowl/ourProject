@@ -22,7 +22,7 @@
                 <button type="submit">검색</button>
             </div>
             <div class="logo">
-                <img src="https://c.011st.com/img/common/v3/logoday.png" alt="11번가 로고">
+                <a href="Servlet?command=main"><img src="https://c.011st.com/img/common/v3/logoday.png" alt="11번가 로고"></a>
             </div>
             <div class="top-nav">
                 <ul>
@@ -33,9 +33,9 @@
                             <li><a href="Servlet?command=cart">장바구니</a></li>
                         </c:when>
                         <c:otherwise>
-                            <li><a href="Servlet?command=login">나의정보</a></li>
-                            <li><a href="Servlet?command=login">주문조회</a></li>
-                            <li><a href="Servlet?command=login">장바구니</a></li>
+                            <li><a href="login.jsp">나의정보</a></li>
+                            <li><a href="login.jsp">주문조회</a></li>
+                            <li><a href="login.jsp">장바구니</a></li>
                         </c:otherwise>
                     </c:choose>
                 </ul>
@@ -45,7 +45,7 @@
     <nav>
         <div class="container">
             <ul>
-                <li><a href="#">홈</a></li>
+                <li><a href="Servlet?command=main">홈</a></li>
                 <li><a href="#">카테고리</a></li>
                 <li><a href="#">베스트</a></li>
                 <li><a href="#">쇼킹딜</a></li>
