@@ -9,7 +9,7 @@ import jakarta.servlet.http.HttpServletResponse;
 
 import java.io.IOException;
 
-public class productDetail implements Action{
+public class productDetailAction implements Action{
     @Override
     public void execute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         int no = Integer.parseInt(request.getParameter("no"));
@@ -20,7 +20,7 @@ public class productDetail implements Action{
         String url = "productDetail.jsp";
 
         request.setAttribute("product",vo);
-
+        //이성진
         RequestDispatcher dis = request.getRequestDispatcher(url);
         dis.forward(request,response);
     }

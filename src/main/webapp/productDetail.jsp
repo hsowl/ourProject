@@ -43,7 +43,29 @@
             </tr>
         </table>
     </form>
+
+    <h1>Q&A</h1>
+    <table class="list">
+        <tr>
+            <td colspan="3" style="border: white; text-align: right"><a
+                    href="Servlet?command=QA_write_form">게시글 등록</a></td>
+        </tr>
+        <tr>
+            <th>번호</th>
+            <th>제목</th>
+            <th>내용</th>
+        </tr>
+        <c:forEach var="QA" items="${QandA}">
+            <tr class="record">
+                <td>${QA.no }</td>
+                <td><a href="BoardServlet?command=board_view&no${QA.no}">
+                        ${QA.title } </a></td>
+                <td>${QA.content}</td>
+            </tr>
+        </c:forEach>
+    </table>
 </div>
+
 </body>
 <%@ include file="footer.jsp"%>
 </html>
