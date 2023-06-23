@@ -47,10 +47,6 @@ public class DAO {
         }
         return vo;
     }
-
-    public CartVO cartSelect(String id) {
-        return new CartVO();
-    }
     public int insertMember(MemberVO vo) {
 
         int result = -1;
@@ -285,7 +281,6 @@ public class DAO {
         } finally {
             DBManager.close(conn, pstmt, rs);
         }
-
         return cvo;
     }
 
