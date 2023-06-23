@@ -15,21 +15,21 @@
 </head>
 <body>
 <form action="/hello-servlet" method="post">
-  <h2>상품 목록</h2>
+  <h2>장바구니</h2>
   <table class="list" border="1" align="center">
     <c:forEach var="product" items="${product}">
     <tr class="record">
+      <input type="checkbox" name="">
       <td> <img src="${product.image}"></td>
       <td>${product.title}<br>${product.name}</td>
       <td>${product.price}원</td>
-      <td><button onclick="insertOrderSearch(${product.id},${product.no})">주문하기</button></td>
-      <--addOrderSearch(${product.no})==주문시 product.no 받아서 orderDB에 추가하는 함수-->
+      <td><input type="hidden" name="id" value="${product.id}"></td>
+      <td><input type="hidden" name="no" value="${product.no}"></td>
     </tr>
     </c:forEach>
   </table>
   <div id="cart">
-    <h2>장바구니</h2>
-    <input type="button" value="주문목록 보기" onclick="location.href='hello-servlet?command=orderSearch'">
+    <input type="submit" value="주문하기" onclick="moveOrderSearch()">
     <input type="reset" value="취소">
   </div>
 </form>
