@@ -8,10 +8,15 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>Title</title>
+  <script type="text/javascript" src="script/member.js"></script>
+    <title>로그인 - 11번가</title>
+    <div class="jimin-header">
+      <h1 calss="jimin-header_logo">
+        <a href="login.jsp"><img src="https://c.011st.com/img/common/v3/logoday.png" alt="11번가 로고"></a>
+      </h1>
+    </div>
 </head>
 <body>
-<h2>로그인</h2>
 <form name="frm" method="post" action="Servlet">
   <input type="hidden" name="command" value="login">
   <table>
