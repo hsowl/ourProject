@@ -16,9 +16,14 @@
 <body>
 <div id="jongjin" align="center">
     <table class="list">
+        <tr>
+            <td>제품명</td>
+            <td>가격</td>
+            <td>사진</td>
+        </tr>
         <c:forEach var="product" items="${product}">
             <tr class="product">
-                <td>${product.title}</td>
+                <td><a href="Servlet?command=productDetail">${product.title}</a></td>
                 <td>${product.price}원</td>
                 <td>${product.image}</td>
             </tr>
