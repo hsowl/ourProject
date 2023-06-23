@@ -8,6 +8,8 @@ import com.example.ourproject.util.DBManager;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.util.ArrayList;
+import java.util.List;
 
 public class DAO {
 
@@ -85,7 +87,7 @@ public class DAO {
         return vo;
     }
 
-    public int insertBoard(CartVO vo) {
+    public int insertProduct(CartVO vo) {
         int result = -1;
         String sql = "insert into cart (id,no) values(?,?)";
         Connection conn = null;
@@ -109,5 +111,33 @@ public class DAO {
             }
         }
         return result;
+    }
+    public List<ProductVO> selectAllList() {
+        List<ProductVO> list = new ArrayList<>();
+        Connection conn = null;
+        PreparedStatement pstmt = null;
+        ResultSet rs = null;
+        String sql = "select * from product order by no";
+
+        try{
+            conn = DBManager.getConnection();
+            pstmt = conn.prepareStatement(sql);
+            rs = pstmt.executeQuery();
+
+            while (rs.next()){
+                ProductVO vo = new ProductVO();
+                vo.setNo(rs.getInt("no"));
+                vo.setTitle(rs.getString("title"));
+                vo.setImage(rs.getString("image"));
+                vo.setPrice(rs.getInt("price"));
+
+                list.add(vo);
+            }
+        }catch (Exception e){
+            e.printStackTrace();
+        }finally {
+            DBManager.close(conn,pstmt,rs);
+        }
+        return list;
     }
 }

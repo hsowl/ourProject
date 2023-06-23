@@ -17,7 +17,7 @@ public class cartUpdateAction implements Action {
         vo.setNo(Integer.parseInt(request.getParameter("no")));
 
         DAO Dao = DAO.getInstance();
-        int result = Dao.insertBoard(vo);
+        int result = Dao.insertProduct(vo);
 
     }
 }
