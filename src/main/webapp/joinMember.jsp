@@ -9,11 +9,13 @@
 <html>
 <head>
     <title>Title</title>
+
+    <script type="text/javascript" src="script/member.js"></script>
 </head>
 <body>
 <h2>회원 가입</h2>
 '*' 표시 항목은 필수 입력 항목입니다.
-<form action="Servlet" method="get" name="frm">
+<form action="Servlet" method="post" name="frm">
     <input type="hidden" name="command" value="joinMember">
     <table>
         <tr>

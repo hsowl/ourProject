@@ -258,8 +258,8 @@ public class DAO {
         }
         return vo;
     }
-    public CartVO cartSelect(String id) {
-
+    public List<CartVO> cartSelect(String id) {
+        List<CartVO> list = new ArrayList<CartVO>();
         Connection conn = null;
         PreparedStatement pstmt = null;
         ResultSet rs = null;
@@ -272,8 +272,14 @@ public class DAO {
             pstmt = conn.prepareStatement(sql);
             rs = pstmt.executeQuery();
             while (rs.next()) {
+                int no=rs.getInt("no");
+                ProductVO pvo= selectOneProductByNo(no);
+                cvo.setTitle(pvo.getTitle());
+                cvo.setImage(pvo.getImage());
+                cvo.setPrice(pvo.getPrice());
                 cvo.setNo(rs.getInt("no"));
                 cvo.setId(rs.getString("id"));
+                list.add(cvo);
             }
 
         } catch (Exception e) {
@@ -281,7 +287,6 @@ public class DAO {
         } finally {
             DBManager.close(conn, pstmt, rs);
         }
-        return cvo;
+        return list;
     }
-
 }
