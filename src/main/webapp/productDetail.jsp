@@ -15,7 +15,6 @@
     <title>Title</title>
 </head>
 <body>
-<div id="sungjin" align="center">
         <table>
             <tr>
                 <td>
@@ -43,7 +42,28 @@
             </tr>
         </table>
     </form>
-</div>
+        <div id="sungjin" align="center">
+        <h1>Q&A</h1>
+        <table class="list">
+            <tr>
+                <td colspan="3" style="border: white; text-align: right"><a
+                        href="Servlet?command=Board_write_form">게시글 등록</a></td>
+            </tr>
+            <tr>
+                <th>번호</th>
+                <th>제목</th>
+                <th>내용</th>
+            </tr>
+            <c:forEach var="board" items="${boardList}">
+                <tr class="record">
+                    <td>${board.no }</td>
+                    <td><a href="Servlet?command=board_view&no${board.no}">
+                            ${board.title } </a></td>
+                    <td>${board.content}</td>
+                </tr>
+            </c:forEach>
+        </table>
+        </div>
 </body>
 <%@ include file="footer.jsp"%>
 </html>

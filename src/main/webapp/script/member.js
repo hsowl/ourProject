@@ -1,3 +1,8 @@
+function open_win(url,name){
+    window.open(url,name,"width=500, height=200");
+}
+
+
 function loginCheck() {
     if(document.frm.id.value.length==0) {
         alert("아이디를 입력해주세요.");
