@@ -23,6 +23,8 @@ public class ActionFactory {
             action = new joinMemberAction();
         }else if(command.equals("cartUpdate")){
             action = new cartUpdateAction();
+        }else if (command.equals("main")) {
+            action = new MainAction();
         }
 
 
