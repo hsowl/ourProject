@@ -24,6 +24,30 @@ public class DAO {
     }
 
     public ProductVO selectOneProductByNo(int no) {
+        ProductVO vo = null;
+        String sql = "select * from product where no=?";
+        Connection conn = null;
+        PreparedStatement pstmt = null;
+        ResultSet rs = null;
+
+        try{
+            conn = DBManager.getConnection();
+            pstmt=conn.prepareStatement(sql);
+            pstmt.setInt(1,no);
+            rs=pstmt.executeQuery();
+
+            if (rs.next()){
+                vo=new ProductVO();
+                vo.setNo(rs.getInt("no"));
+                vo.setTitle(rs.getString("title"));
+                vo.setImage(rs.getString("image"));
+                vo.setPrice(rs.getInt("price"));
+            }
+        }catch (Exception e){
+            e.printStackTrace();
+        }finally {
+            DBManager.close(conn,pstmt,rs);
+        }
         return new ProductVO();
     }
 
