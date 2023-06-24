@@ -6,7 +6,8 @@ public class ActionFactory {
 
     private static ActionFactory instance = new ActionFactory();
 
-    private ActionFactory() {}
+    private ActionFactory() {
+    }
 
     public static ActionFactory getInstance() {
         return instance;
@@ -15,27 +16,29 @@ public class ActionFactory {
     public static Action getAction(String command) {
         Action action = null;
 
-        if(command.equals("my_Info")){
+        if (command.equals("my_Info")) {
             action = new myInfoAction();
-        }else if(command.equals("login")) {
+        } else if (command.equals("login")) {
             action = new loginAction();
-        }else if(command.equals("joinMember")) {
+        } else if (command.equals("joinMember")) {
             action = new joinMemberAction();
-        }else if(command.equals("cartUpdate")){
+        } else if (command.equals("cartUpdate")) {
             action = new cartUpdateAction();
-        }else if (command.equals("main")) {
+        } else if (command.equals("main")) {
             action = new MainAction();
-        }else if (command.equals("productDetail")) {
+        } else if (command.equals("productDetail")) {
             action = new productDetailAction();
-        }else if (command.equals("Board_write_form")) {
+        } else if (command.equals("Board_write_form")) {
             action = new boardWriteAction();
-        }else if (command.equals("orderSearch")) {
+        } else if (command.equals("orderSearch")) {
             action = new orderSearchAction();
-        }else if (command.equals("cart")) {
+        } else if (command.equals("cart")) {
             action = new cartAction();
-        }else if (command.equals("idCheck")) {
-        action = new idCheckAction();
-    }
+        } else if (command.equals("idCheck")) {
+            action = new idCheckAction();
+        } else if (command.equals("infoUpdate")) {
+            action = new infoUpdateAction();
+        }
         return action;
     }
 

@@ -316,4 +316,27 @@ public class DAO {
         }
         return result;
     }
+
+    public void infoUpdate(MemberVO vo) {
+        String sql = "update member set id = ?, pw=?, email=?, name=?, phone=? where id=?";
+        Connection conn = null;
+        PreparedStatement pstmt = null;
+
+        try {
+            conn = DBManager.getConnection();
+            pstmt = conn.prepareStatement(sql);
+            pstmt.setString(1,vo.getId());
+            pstmt.setString(2,vo.getPw());
+            pstmt.setString(3,vo.getEmail());
+            pstmt.setString(4,vo.getName());
+            pstmt.setString(5,vo.getPhone());
+            pstmt.setString(6,vo.getId());
+
+            pstmt.executeUpdate();
+        }catch (Exception e){
+            e.printStackTrace();
+        }finally {
+             DBManager.close(conn, pstmt);
+        }
+    }
 }
