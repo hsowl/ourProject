@@ -26,6 +26,11 @@ function joinCheck() {
         frm.name.focus();
         return false;
     }
+    if(document.frm.id.value=="") {
+        alert("아이디 입력 후 중복체크 해주세요.");
+        frm.id.focus();
+        return false;
+    }
     if(document.frm.pw.value=="") {
         alert("비밀번호를 입력해주세요.");
         frm.pw.focus();
@@ -34,6 +39,11 @@ function joinCheck() {
     if(document.frm.pw.value!=document.frm.pw_check.value) {
         alert("암호가 일치하지 않습니다.");
         frm.pw.focus();
+        return false;
+    }
+    if(document.frm.phone.value=="") {
+        alert("전화번호를 입력해주세요.");
+        frm.phone.focus();
         return false;
     }
 }

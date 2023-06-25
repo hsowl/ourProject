@@ -16,7 +16,7 @@ public class loginAction implements Action {
         String url = "login.jsp";
         String id = request.getParameter("id");
         String pw = request.getParameter("pw");
-
+        System.out.println(id);
         DAO Dao = DAO.getInstance();
         int result = Dao.userCheck(id, pw);
 
