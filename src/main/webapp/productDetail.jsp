@@ -34,6 +34,7 @@
                                 <form name="form1" method="post" action="Servlet">
                                     <input type="hidden" name="command" value="cartUpdate">
                                     <input type="submit" value="장바구니에 담기" onclick="return cartCheck()">
+                                    <input type="submit" value="구매하기">
                                 </form>
                             </td>
                         </tr>
@@ -50,9 +51,8 @@
                 <th>내용</th>
             </tr>
             <c:forEach var="board" items="${boardList}">
-                <tr class="record">
-                    <td>${board.no}</td>
-                    <td><a href="Servlet?command=board_view&no${board.no}">
+                <tr>
+                    <td><a href="Servlet?command=board_view&no=${board.no}">
                             ${board.title } </a></td>
                     <td>${board.content}</td>
                 </tr>

@@ -19,13 +19,15 @@ public class productDetailAction implements Action{
         DAO Dao = DAO.getInstance();
 
         ProductVO vo = Dao.selectOneProductByNo(no);
-        List<QAVO> list =Dao.selectAllBoard(no);
         String url = "productDetail.jsp";
+        List<QAVO> list =Dao.selectAllBoard(no);
 
         request.setAttribute("product",vo);
         request.setAttribute("boardList",list);
         //이성진
         RequestDispatcher dis = request.getRequestDispatcher(url);
         dis.forward(request,response);
+
+        System.out.println(list);
     }
 }
