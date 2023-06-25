@@ -159,10 +159,10 @@ public class DAO {
         return list;
     }
 
-    public List<QAVO> selectAllBoard() {
+    public List<QAVO> selectAllBoard(int no) {
         List<QAVO> list = new ArrayList<QAVO>();
 
-        String sql = "select * from QA order by no";
+        String sql = "select * from QA where=no";
         Connection conn = null;
         PreparedStatement pstmt = null;
         ResultSet rs = null;
@@ -170,6 +170,7 @@ public class DAO {
         try{
             conn = DBManager.getConnection();
             pstmt=conn.prepareStatement(sql);
+            pstmt.setInt(1, no);
             rs=pstmt.executeQuery();
 
             while (rs.next()){

@@ -9,7 +9,7 @@
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <%@ include file="header.jsp"%>
-<link rel="stylesheet" type="text/css" href="css/style.css">
+<link rel="stylesheet" type="text/css" href="css/qna.css">
 <html>
 <head>
     <title>Title</title>
@@ -42,26 +42,25 @@
             </tr>
         </table>
     </form>
-        <div id="sungjin" align="center">
+        <div id="wrap" align="center">
         <h1>Q&A</h1>
         <table class="list">
             <tr>
-                <td colspan="3" style="border: white; text-align: right"><a
-                        href="Servlet?command=Board_write_form">게시글 등록</a></td>
-            </tr>
-            <tr>
-                <th>번호</th>
                 <th>제목</th>
                 <th>내용</th>
             </tr>
             <c:forEach var="board" items="${boardList}">
                 <tr class="record">
-                    <td>${board.no }</td>
+                    <td>${board.no}</td>
                     <td><a href="Servlet?command=board_view&no${board.no}">
                             ${board.title } </a></td>
                     <td>${board.content}</td>
                 </tr>
             </c:forEach>
+            <tr>
+                <input type="button" value="게시글 등록"
+                       onclick="open_win('Servlet?command=Board_write_form&no=${board.no}', 'write')">
+            </tr>
         </table>
         </div>
 </body>

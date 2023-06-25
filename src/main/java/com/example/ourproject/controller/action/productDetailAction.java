@@ -19,7 +19,7 @@ public class productDetailAction implements Action{
         DAO Dao = DAO.getInstance();
 
         ProductVO vo = Dao.selectOneProductByNo(no);
-        List<QAVO> list =Dao.selectAllBoard();
+        List<QAVO> list =Dao.selectAllBoard(no);
         String url = "productDetail.jsp";
 
         request.setAttribute("product",vo);
