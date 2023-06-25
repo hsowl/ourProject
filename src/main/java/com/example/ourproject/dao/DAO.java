@@ -339,4 +339,38 @@ public class DAO {
              DBManager.close(conn, pstmt);
         }
     }
+    public List<OrderSearchVO> orderSelectDate(int num, String id){
+        OrderSearchVO vo = new OrderSearchVO();
+        List<OrderSearchVO> list = new ArrayList<OrderSearchVO>();
+        Connection conn = null;
+        PreparedStatement pstmt = null;
+        ResultSet rs = null;
+        String sql = "";
+
+        try {
+            if(num==-1){
+                sql ="select * form orderSearch";
+            } else if (num==0) {
+                sql ="select * from orderSearch Where orderdate<=sysdate(Month,-1)";
+            } else {
+                sql = "select * from orderSearch Where orderdate<=sysdate(Month,-3)";
+            }
+            conn = DBManager.getConnection();
+            pstmt = conn.prepareStatement(sql);
+            rs = pstmt.executeQuery();
+
+            while (rs.next()) {
+                vo.setId(rs.getString("id"));
+                vo.setNo(rs.getInt("no"));
+                list.add(vo);
+            }
+
+        }catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            DBManager.close(conn, pstmt, rs);
+        }
+
+        return list;
+    }
 }

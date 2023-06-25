@@ -2,11 +2,13 @@ package com.example.ourproject.controller.action;
 
 import com.example.ourproject.VO.OrderSearchVO;
 import com.example.ourproject.dao.DAO;
+import jakarta.servlet.RequestDispatcher;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 
 import java.io.IOException;
+import java.util.List;
 
 public class orderSearchAction implements Action{
     @Override
@@ -16,7 +18,14 @@ public class orderSearchAction implements Action{
 
         DAO dao = DAO.getInstance();
 
-        OrderSearchVO vo = new OrderSearchVO();
+        int num = -1;
+        num = Integer.parseInt(request.getParameter("num"));
 
+        List<OrderSearchVO> list = dao.orderSelectDate(num,id);
+
+        request.setAttribute("orderSearch",list);
+
+        RequestDispatcher dis = request.getRequestDispatcher(url);
+        dis.forward(request, response);
     }
 }
