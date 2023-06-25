@@ -15,7 +15,7 @@
 <body>
 <form action="Servlet?command=orderSearch" method="post">
     <h2>주문조회</h2>
-    <label for="date">주문일자 검색</label>
+    <h3>주문일자 검색</h3>
     <select name="date">
         <option value="-1">전체</option>
         <option value="0">1개월 내</option>
@@ -26,6 +26,8 @@
     <c:forEach var="product" items="${product}">
             <tr class="record">
                 <td>${orderSearch.no}</td>
+                <td>${orderSearch.title}<br>${orderSearch.name}</td>
+                <td>${orderSearch.price}원</td>
             </tr>
     </table>
     </c:forEach>

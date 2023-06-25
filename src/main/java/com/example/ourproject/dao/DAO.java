@@ -360,6 +360,11 @@ public class DAO {
             rs = pstmt.executeQuery();
 
             while (rs.next()) {
+                int no=rs.getInt("no");
+                ProductVO pvo= selectOneProductByNo(no);
+                vo.setTitle(pvo.getTitle());
+                vo.setImage(pvo.getImage());
+                vo.setPrice(pvo.getPrice());
                 vo.setId(rs.getString("id"));
                 vo.setNo(rs.getInt("no"));
                 list.add(vo);
