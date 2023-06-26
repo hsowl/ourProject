@@ -11,11 +11,12 @@
 <head>
     <title>Title</title>
     <link rel="stylesheet" type="text/css" href="css/myInfoStyle.css">
+    <script type="text/javascript" src="script/update.js"></script>
 </head>
 <%@ include file="header.jsp" %>
 <body>
 <h2 align="center">내 정보 수정</h2>
-<form method="post" action="Servlet?command=infoUpdate">
+<form method="post" action="Servlet?command=infoUpdate" name="frm">
     <table align="center" border="1px">
         <tr>
             <th>이름</th>
@@ -58,7 +59,7 @@
         </tr>
         <tr>
             <td colspan="2" align="center">
-                <input align="center" type="submit" value="확인">
+                <input align="center" type="submit" value="확인" onclick="return update()">
                 <input align="center" type="reset" value="취소">
             </td>
         </tr>
