@@ -36,8 +36,6 @@ public class ActionFactory {
             action = new idCheckAction();
         } else if (command.equals("infoUpdate")) {
             action = new infoUpdateAction();
-        }else if (command.equals("boardCheck")) {
-            action = new BoardCheckAction();
         }else if (command.equals("board_write_form")) {
             action = new boardWriteFormAction();
         }else if (command.equals("logout")) {
@@ -46,8 +44,6 @@ public class ActionFactory {
             action = new BoardViewAction();
         }else if (command.equals("pwCheck")) {
             action = new pwCheckAction();
-        }else if (command.equals("board_check_pass")) {
-            action = new boardCheckPassAction();
         }else if (command.equals("search")) {
             action = new searchAction();
         }
