@@ -1,5 +1,6 @@
 package com.example.ourproject.controller.action;
 
+import jakarta.servlet.RequestDispatcher;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
@@ -17,5 +18,8 @@ public class pwCheckAction implements Action {
         String id = (String) session.getAttribute("id");
 
         System.out.println("id = " +id);
+
+        RequestDispatcher dis = request.getRequestDispatcher(url);
+        dis.forward(request,response);
     }
 }
