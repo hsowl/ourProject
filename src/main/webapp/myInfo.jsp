@@ -53,7 +53,7 @@
     </tr>
     <tr>
         <td colspan="2" align="center">
-            <input align="center" type="button" onclick="수정으로갈예정임" value="회원정보 수정">
+            <input align="center" type="button" onclick="location.href='infoUpdate.jsp'" value="회원정보 수정">
         </td>
     </tr>
 </table>
