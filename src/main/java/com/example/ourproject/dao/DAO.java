@@ -273,6 +273,11 @@ public class DAO {
             pstmt.setString(1, id);
             rs = pstmt.executeQuery();
             while (rs.next()) {
+                int no= rs.getInt("no");
+                ProductVO pvo =selectOneProductByNo(no);
+                cvo.setImage(pvo.getImage());
+                cvo.setTitle(pvo.getTitle());
+                cvo.setPrice(pvo.getPrice());
                 cvo.setNo(rs.getInt("no"));
                 cvo.setId(rs.getString("id"));
                 list.add(cvo);
