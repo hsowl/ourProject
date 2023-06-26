@@ -270,6 +270,7 @@ public class DAO {
         try {
             conn = DBManager.getConnection();
             pstmt = conn.prepareStatement(sql);
+            pstmt.setString(1, id);
             rs = pstmt.executeQuery();
             while (rs.next()) {
                 cvo.setNo(rs.getInt("no"));
