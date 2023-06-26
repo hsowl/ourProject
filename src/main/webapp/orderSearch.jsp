@@ -13,7 +13,7 @@
     <title>주문조회리스트</title>
 </head>
 <body>
-<form action="Servlet?command=orderSearch" method="post">
+<form action="helloServlet" method="post">
     <h2>주문조회</h2>
     <h3>주문일자 검색</h3>
     <select name="date">
@@ -23,11 +23,12 @@
     </select>
     <input type="submit" value="검색">
     <table class="list" border="1" align="center">
-    <c:forEach var="product" items="${product}">
+    <c:forEach var="orderSearch" items="${orderSearch}">
             <tr class="record">
                 <td>${orderSearch.no}</td>
                 <td>${orderSearch.title}<br>${orderSearch.name}</td>
                 <td>${orderSearch.price}원</td>
+                <td>${orderSearch.orderDate}</td>
             </tr>
     </table>
     </c:forEach>
