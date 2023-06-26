@@ -12,6 +12,7 @@
 <link rel="stylesheet" type="text/css" href="css/qna.css">
 <html>
 <head>
+    <script type="text/javascript" src="script/board.js"></script>
     <title>Title</title>
 </head>
 <body>

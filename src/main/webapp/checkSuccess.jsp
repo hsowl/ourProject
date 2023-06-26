@@ -11,10 +11,10 @@
     <title>Title</title>
 </head>
 <body>
-<script type="text/javascript">
+<script type="text/javascript" src="script/board.js">
     if(window.name=="write"){
         window.opener.parent.location.href=
-            "Servlet?command=board_write_form&no=${param.no}";
+            "Servlet?command=board_write_form&no=${no.no}";
     }
     <%--else if(window.name=='delete'){--%>
     <%--    alert("삭제되었습니다");--%>

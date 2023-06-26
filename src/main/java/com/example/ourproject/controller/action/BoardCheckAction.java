@@ -11,6 +11,7 @@ public class BoardCheckAction implements Action {
     @Override
     public void execute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         int no = Integer.parseInt(request.getParameter("no"));
+        request.setAttribute("no",no);
 //        if(vo.getPass().equals(pass)){
 //            url = "/board/checkSuccess.jsp";
 //        }else{
