@@ -19,11 +19,11 @@
     <table border="1px" class="list">
         <c:forEach var="product" items="${product}">
             <tr class="product">
-                <td><img src = ${product.image}></td>
-                <td>
+                <td><img height="250px" width="300px" src = ${product.image}></td>
+                <td width="300px">
                     <a href="Servlet?command=productDetail&no=${product.no}">${product.title}</a>
-                    <br><br><br>
-                    <fmt:formatNumber value="${product.price}" pattern="###,###,###"/>원
+                    <br><br><br><hr>
+                    가격 : <fmt:formatNumber value="${product.price}" pattern="###,###,###"/>원
                 </td>
             </tr>
         </c:forEach>

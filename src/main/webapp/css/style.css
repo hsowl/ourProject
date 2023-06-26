@@ -120,3 +120,19 @@ footer {
     padding: 10px 0;
     text-align: center;
 }
+
+/* 슬라이드 쇼 컨테이너 스타일 */
+.slideshow-container {
+    position: relative;
+    width: 100%;
+    height: 100vh; /* 화면 높이에 맞게 조정 */
+    overflow: hidden;
+}
+
+/* 이미지 슬라이드 스타일 */
+.mySlides {
+    display: none;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* 이미지를 적절히 조정하여 컨테이너에 맞게 표시 */
+}
