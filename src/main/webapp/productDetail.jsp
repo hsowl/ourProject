@@ -12,7 +12,13 @@
 <link rel="stylesheet" type="text/css" href="css/qna.css">
 <html>
 <head>
-    <script type="text/javascript" src="script/board.js"></script>
+    <script type="text/javascript">
+        function insert(){
+            let options = "toolbar=no,scrollbars=no,resizable=yes,status=no,menubar=no,width=1200, height=800, top=0,left=0";
+
+            window.open("http://www.naver.com","_blank", options);
+        }
+    </script>
     <script type="text/javascript" src="script/cartgo.js"></script>
     <title>Title</title>
 </head>
@@ -62,10 +68,9 @@
                 </tr>
             </c:forEach>
             <tr>
-                <button onclick="return confirmSelection()">aaaa</button>
+                <input type="button" onclick="insert()" value="현재창에서 열기"/>
                 <input type="button" value="게시글 삭제"
                        onclick="return insert()">
-
             </tr>
         </table>
         </div>

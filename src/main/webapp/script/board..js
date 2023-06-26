@@ -3,3 +3,7 @@ function insert(){
 
     window.open("http://www.naver.com","_blank", options);
 }
+
+function open1(){
+    window.open("https://ssd0908.tistory.com/", "_self");
+}
