@@ -46,6 +46,10 @@ public class ActionFactory {
             action = new BoardViewAction();
         }else if (command.equals("pwCheck")) {
             action = new pwCheckAction();
+        }else if (command.equals("board_check_pass")) {
+            action = new boardCheckPassAction();
+        }else if (command.equals("search")) {
+            action = new searchAction();
         }
         return action;
     }
