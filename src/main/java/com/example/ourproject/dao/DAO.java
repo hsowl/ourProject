@@ -175,6 +175,8 @@ public class DAO {
             while (rs.next()){
                 QAVO vo = new QAVO();
                 vo.setNo(rs.getInt("no"));
+                vo.setId(rs.getString("id"));
+                vo.setPass(rs.getString("pass"));
                 vo.setTitle(rs.getString("title"));
                 vo.setContent(rs.getString("content"));
                 list.add(vo);
@@ -461,5 +463,33 @@ public class DAO {
             DBManager.close(conn,pstmt,rs);
         }
         return vo;
+    }
+    public int insertBoard(QAVO vo) {
+        int result = -1;
+        String sql = "insert into QA(no,id,pass,title,content) values(?,?,?,?,?)";
+        Connection conn = null;
+        PreparedStatement pstmt = null;
+        ResultSet rs = null;
+
+        try {
+            conn = DBManager.getConnection();
+            pstmt=conn.prepareStatement(sql);
+            pstmt.setInt(1, vo.getNo());
+            pstmt.setString(2, vo.getId());
+            pstmt.setString(3, vo.getPass());
+            pstmt.setString(4, vo.getTitle());
+            pstmt.setString(5, vo.getContent());
+            result=pstmt.executeUpdate();
+
+        }catch(Exception e) {
+            e.printStackTrace();
+        }finally {
+            try {
+                DBManager.close(conn,pstmt);
+            }catch(Exception e) {
+                e.printStackTrace();
+            }
+        }
+        return result;
     }
 }

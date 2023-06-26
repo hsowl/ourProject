@@ -50,6 +50,10 @@ public class ActionFactory {
             action = new findIdAction();
         }else if (command.equals("findPw")) {
             action = new findPwAction();
+        }else if(command.equals("boardWriteForm")){
+            action = new boardWriteFormAction();
+        }else if(command.equals("boardInsert")){
+            action = new boardInsertAction();
         }
         return action;
     }
