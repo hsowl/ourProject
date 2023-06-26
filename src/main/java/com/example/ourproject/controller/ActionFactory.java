@@ -46,6 +46,10 @@ public class ActionFactory {
             action = new searchAction();
         }else if (command.equals("orderUpdate")) {
             action = new orderUpdateAction();
+        }else if (command.equals("findId")) {
+            action = new findIdAction();
+        }else if (command.equals("findPw")) {
+            action = new findPwAction();
         }
         return action;
     }
