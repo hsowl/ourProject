@@ -28,8 +28,6 @@ public class ActionFactory {
             action = new MainAction();
         } else if (command.equals("productDetail")) {
             action = new productDetailAction();
-        } else if (command.equals("Board_write_form")) {
-            action = new boardWriteFormAction();
         } else if (command.equals("orderSearch")) {
             action = new orderSearchAction();
         } else if (command.equals("cart")) {
@@ -38,6 +36,10 @@ public class ActionFactory {
             action = new idCheckAction();
         } else if (command.equals("infoUpdate")) {
             action = new infoUpdateAction();
+        }else if (command.equals("boardCheck")) {
+            action = new BoardCheckAction();
+        }else if (command.equals("board_write_form")) {
+            action = new boardWriteFormAction();
         }
         return action;
     }
