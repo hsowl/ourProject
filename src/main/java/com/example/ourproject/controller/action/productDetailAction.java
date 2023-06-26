@@ -24,10 +24,9 @@ public class productDetailAction implements Action{
 
         request.setAttribute("product",vo);
         request.setAttribute("boardList",list);
-        //이성진
+
         RequestDispatcher dis = request.getRequestDispatcher(url);
         dis.forward(request,response);
 
-        System.out.println(list);
     }
 }
