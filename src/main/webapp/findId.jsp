@@ -29,7 +29,7 @@
       비밀번호 : <input type="password" class="form-control" name="pw">
     </div>
     <br>
-    <button style="width:100%" type="submit" class="btn btn-danger" onclick="return idCheck()">아이디 찾기</button>
+    <button style="width:100%" type="submit" class="btn btn-danger">아이디 찾기</button>
     <br>
 
   </form>

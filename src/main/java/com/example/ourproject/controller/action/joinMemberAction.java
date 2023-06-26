@@ -27,8 +27,6 @@ public class joinMemberAction implements Action {
         vo.setGender(request.getParameter("gender"));
         vo.setPhone(request.getParameter("phone"));
 
-        System.out.println(vo.getBirthDate());
-
         DAO dao = DAO.getInstance();
         int result = dao.insertMember(vo); //DAO 통해 DB접속
 
