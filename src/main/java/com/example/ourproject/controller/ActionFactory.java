@@ -36,8 +36,6 @@ public class ActionFactory {
             action = new idCheckAction();
         } else if (command.equals("infoUpdate")) {
             action = new infoUpdateAction();
-        }else if (command.equals("board_write_form")) {
-            action = new boardWriteFormAction();
         }else if (command.equals("logout")) {
             action = new logoutAction();
         }else if (command.equals("board_view")) {
