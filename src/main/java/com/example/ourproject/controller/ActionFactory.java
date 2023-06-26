@@ -42,6 +42,10 @@ public class ActionFactory {
             action = new boardWriteFormAction();
         }else if (command.equals("logout")) {
             action = new logoutAction();
+        }else if (command.equals("board_view")) {
+            action = new BoardViewAction();
+        }else if (command.equals("pwCheck")) {
+            action = new pwCheckAction();
         }
         return action;
     }
