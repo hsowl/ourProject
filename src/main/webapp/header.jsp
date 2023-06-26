@@ -51,15 +51,19 @@
                 <li><a href="#">쇼킹딜</a></li>
                 <li><a href="#">이벤트</a></li>
                 <li><a href="#">프로모션</a></li>
-                <li>
-                    <pre>                                                                      </pre>
-                </li>
                 <c:choose>
                     <c:when test="${id != null}">
+                        <li>
+                            <pre>                                    </pre>
+                        </li>
                         <li style="color: #333333">${id.name}님 안녕하세요.</li>
                         <li><a href="infoUpdate.jsp">회원 정보 수정</a></li>
+                        <li><a href="Servlet?command=logout">로그아웃</a></li>
                     </c:when>
                     <c:otherwise>
+                        <li>
+                            <pre>                                                                      </pre>
+                        </li>
                         <li><a href="login.jsp">로그인</a></li>
                         <li><a href="joinMember.jsp">회원가입</a></li>
                     </c:otherwise>
