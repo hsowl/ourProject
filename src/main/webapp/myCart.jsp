@@ -22,6 +22,9 @@
     <c:forEach var="product" items="${product}">
     <tr>
       <input type="checkbox" name="">
+      <td>${product.image}</td>
+      <td>${product.title}</td>
+      <td>${product.price}</td>
       <td>${product.id}</td>
       <td>${product.no}</td>
       <td><input type="hidden" name="id" value="${product.id}"></td>
