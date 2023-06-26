@@ -398,4 +398,35 @@ public class DAO {
             DBManager.close(conn, pstmt);
         }
     }
+    public List<ProductVO> searchList(String keyword) {
+        List<ProductVO> list = new ArrayList<>();
+        System.out.println("keyword = "+keyword);
+
+        Connection conn = null;
+        PreparedStatement pstmt = null;
+        ResultSet rs = null;
+        String sql = "select * from product where title like ?";
+
+        try{
+            conn = DBManager.getConnection();
+            pstmt = conn.prepareStatement(sql);
+            pstmt.setString(1,"%"+keyword+"%");
+            rs = pstmt.executeQuery();
+
+            while (rs.next()){
+                ProductVO vo = new ProductVO();
+                vo.setNo(rs.getInt("no"));
+                vo.setTitle(rs.getString("title"));
+                vo.setImage(rs.getString("image"));
+                vo.setPrice(rs.getInt("price"));
+
+                list.add(vo);
+            }
+        }catch (Exception e){
+            e.printStackTrace();
+        }finally {
+            DBManager.close(conn,pstmt,rs);
+        }
+        return list;
+    }
 }

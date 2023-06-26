@@ -13,6 +13,7 @@
 <html>
 <head>
     <script type="text/javascript" src="script/board.js"></script>
+    <script type="text/javascript" src="script/cartgo.js"></script>
     <title>Title</title>
 </head>
 <body>
@@ -34,7 +35,7 @@
                             <td colspan="3">
                                 <form name="form1" method="post" action="Servlet">
                                     <input type="hidden" name="command" value="cartUpdate">
-                                    <input type="submit" value="장바구니에 담기" onclick="return cartCheck()">
+                                    <input type="submit" value="장바구니에 담기" onclick="return confirmSelection()">
                                     <input type="submit" value="구매하기">
                                 </form>
                             </td>
@@ -59,9 +60,10 @@
                 </tr>
             </c:forEach>
             <tr>
-                <button onclick=insert()>aaaa</button>
+                <button onclick="return confirmSelection()">aaaa</button>
                 <input type="button" value="게시글 삭제"
-                       onclick=insert()>
+                       onclick="return insert()">
+
             </tr>
         </table>
         </div>
