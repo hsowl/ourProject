@@ -59,7 +59,9 @@
             </c:forEach>
             <tr>
                 <input type="button" value="게시글 등록"
-                       onclick="open_win('Servlet?command=Board_write_form&no=${board.no}', 'write')">
+                       onclick="open_win('Servlet?command=boardCheck&no=${board.no}', 'write')">
+                <input type="button" value="게시글 삭제"
+                       onclick="open_win('Servlet?command=BoardCheck&no=${board.no}', 'delete')">
             </tr>
         </table>
         </div>
