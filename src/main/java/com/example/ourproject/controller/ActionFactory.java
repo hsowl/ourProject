@@ -40,6 +40,8 @@ public class ActionFactory {
             action = new BoardCheckAction();
         }else if (command.equals("board_write_form")) {
             action = new boardWriteFormAction();
+        }else if (command.equals("logout")) {
+            action = new logoutAction();
         }
         return action;
     }
