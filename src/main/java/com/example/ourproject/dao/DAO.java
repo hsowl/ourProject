@@ -378,4 +378,24 @@ public class DAO {
 
         return list;
     }
+    public void insertOrder(OrderSearchVO vo) {
+        String sql = "insert into orderSearch(id, no, orderDate) values(?,?,sysdate)";
+        Connection conn = null;
+        PreparedStatement pstmt = null;
+
+        try{
+            conn = DBManager.getConnection();
+            pstmt =conn.prepareStatement(sql);
+
+            pstmt.setString(1, vo.getId());
+            pstmt.setInt(2, vo.getNo());
+
+            pstmt.executeUpdate();
+
+        }catch (Exception e){
+            e.printStackTrace();
+        }finally {
+            DBManager.close(conn, pstmt);
+        }
+    }
 }

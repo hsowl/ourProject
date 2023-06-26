@@ -44,6 +44,8 @@ public class ActionFactory {
             action = new pwCheckAction();
         }else if (command.equals("search")) {
             action = new searchAction();
+        }else if (command.equals("orderUpdate")) {
+            action = new orderUpdateAction();
         }
         return action;
     }
