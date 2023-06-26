@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%--
   Created by IntelliJ IDEA.
   User: Jimin
@@ -10,27 +11,35 @@
 <script type="text/javascript" src="script/member.js"></script>
 <%@ include file="./include/top.jsp" %>
 
+<div class="jimin-header m-auto" style="text-align: center">
+  <h1 calss="jimin-header_logo">
+    <a href="Servlet?command=main"><img src="https://static.011st.com/assets/img/svg/logo/11st.svg" alt="11번가 로고"></a>
+    <br>
+    <br>
+  </h1>
+</div>
 
 <div style="width:328px;margin:50px auto">
-  <div class="jimin-header m-auto" style="text-align: center">
-    <h1 calss="jimin-header_logo">
-      <a href="Servlet?command=main"><img src="https://static.011st.com/assets/img/svg/logo/11st.svg" alt="11번가 로고"></a>
-      <br>
-      <br>
-    </h1>
-  </div>
-
   <form name="frm" method="post" action="Servlet">
     <input type="hidden" name="command" value="findId">
     <div class="mb-3">
       이름 : <input type="text" class="form-control" name="name">
     </div>
     <div class="mb-3">
-      비밀번호 : <input type="password" class="form-control" name="pw">
+      비밀번호 : <input type="password" class="form-control" name="pw" oninput="findCheck()">
     </div>
     <br>
     <button style="width:100%" type="submit" class="btn btn-danger">아이디 찾기</button>
+
+<%--    <c:if test="${name.pw && name.name != null}">--%>
+<%--      <script type="text/javascript">--%>
+<%--        var url = "Servlet?command=findId";--%>
+<%--        window.open(url, "_blank_1", "toolbar=no, menubar=no, scrollbars=yes, resizable=no, width=500, height=500");--%>
+<%--      </script>--%>
+<%--    </c:if>--%>
     <br>
+
+    ${message}
 
   </form>
 

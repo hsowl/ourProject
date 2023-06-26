@@ -63,3 +63,16 @@ function idok(){
     // opener.frm.reid.value = document.frm.id.value;
     self.close();
 }
+
+function findCheck() {
+    if(document.frm.name.value.length==0) {
+        alert("이름을 입력해주세요.");
+        frm.name.focus();
+        return false;
+    }
+    if(document.frm.pw.value=="") {
+        alert("비밀번호를 입력해주세요.");
+        frm.pw.focus();
+        return false;
+    }
+}
