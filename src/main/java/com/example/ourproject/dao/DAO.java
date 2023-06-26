@@ -431,4 +431,35 @@ public class DAO {
         }
         return list;
     }
+
+    public MemberVO findId(String name, String pw) {
+        MemberVO vo = null;
+
+        String sql = "select id from member where (name=? and pw=?)";
+        Connection conn = null;
+        PreparedStatement pstmt = null;
+        ResultSet rs = null;
+
+        try {
+            conn = DBManager.getConnection();
+            pstmt = conn.prepareStatement(sql);
+            pstmt.setString(1,name);
+            pstmt.setString(2,pw);
+            rs = pstmt.executeQuery();
+
+            if(rs.next()) {
+                vo = new MemberVO();
+
+                vo.setId(rs.getString("id"));
+                vo.setPw(rs.getString("pw"));
+                vo.setName(rs.getString("name"));
+
+            }
+        }catch(Exception e) {
+            e.printStackTrace();
+        }finally {
+            DBManager.close(conn,pstmt,rs);
+        }
+        return vo;
+    }
 }
