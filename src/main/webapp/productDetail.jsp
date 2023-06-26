@@ -35,9 +35,11 @@
                             <td colspan="3">
                                 <form name="form1" method="post" action="Servlet">
                                     <input type="hidden" name="command" value="cartUpdate">
-                                    <input type="submit" value="장바구니에 담기" onclick="return confirmSelection()">
-                                    <input type="submit" value="구매하기">
+                                    <input type="hidden" name="id" value=${id.id}>
+                                    <input type="hidden" name="no" value=${product.no}>
+                                    <input type="submit" value="장바구니에 담기">
                                 </form>
+                                <input type="submit" value="구매하기">
                             </td>
                         </tr>
                     </table>
