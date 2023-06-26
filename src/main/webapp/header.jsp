@@ -18,11 +18,14 @@
     <div class="top-bar">
         <div class="container">
             <div class="search-bar">
-                <input type="text" placeholder="검색어를 입력하세요">
-                <button type="submit">검색</button>
+                <form method="get" action="Servlet?command=search">
+                    <input type="text" placeholder="검색어를 입력하세요">
+                    <button type="submit">검색</button>
+                </form>
             </div>
             <div class="logo">
-                <a href="Servlet?command=main"><img src="https://c.011st.com/img/common/v3/logoday.png" alt="11번가 로고"></a>
+                <a href="Servlet?command=main"><img src="https://c.011st.com/img/common/v3/logoday.png"
+                                                    alt="11번가 로고"></a>
             </div>
             <div class="top-nav">
                 <ul>
@@ -57,7 +60,7 @@
                             <pre>                                    </pre>
                         </li>
                         <li style="color: #333333">${id.name}님 안녕하세요.</li>
-                        <li><a href="pwCheck.jsp">회원 정보 수정</a></li>
+                        <li><a href="infoUpdate.jsp">회원 정보 수정</a></li>
                         <li><a href="Servlet?command=logout">로그아웃</a></li>
                     </c:when>
                     <c:otherwise>

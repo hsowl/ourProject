@@ -36,12 +36,16 @@ public class ActionFactory {
             action = new idCheckAction();
         } else if (command.equals("infoUpdate")) {
             action = new infoUpdateAction();
-        }else if (command.equals("boardCheck")) {
-            action = new BoardCheckAction();
-        }else if (command.equals("board_write_form")) {
-            action = new boardWriteFormAction();
         }else if (command.equals("logout")) {
             action = new logoutAction();
+        }else if (command.equals("board_view")) {
+            action = new BoardViewAction();
+        }else if (command.equals("pwCheck")) {
+            action = new pwCheckAction();
+        }else if (command.equals("search")) {
+            action = new searchAction();
+        }else if (command.equals("orderUpdate")) {
+            action = new orderUpdateAction();
         }
         return action;
     }

@@ -77,9 +77,9 @@ public class DAO {
         }
         return result;
     }
-    public ProductVO selectOneBoardByNum(int no) {
-        ProductVO vo = null;
-        String sql = "select * from board where num=?";
+    public QAVO selectOneBoardByNo(int no) {
+        QAVO vo = null;
+        String sql = "select * from board where no=?";
         Connection conn = null;
         PreparedStatement pstmt = null;
         ResultSet rs = null;
@@ -91,11 +91,10 @@ public class DAO {
             rs=pstmt.executeQuery();
 
             if (rs.next()){
-                vo=new ProductVO();
+                vo=new QAVO();
                 vo.setNo(rs.getInt("no"));
                 vo.setTitle(rs.getString("title"));
-                vo.setPrice(rs.getInt("price"));
-                vo.setImage(rs.getString("image"));
+                vo.setContent(rs.getString("content"));
             }
         }catch (Exception e){
             e.printStackTrace();
@@ -378,5 +377,25 @@ public class DAO {
         }
 
         return list;
+    }
+    public void insertOrder(OrderSearchVO vo) {
+        String sql = "insert into orderSearch(id, no, orderDate) values(?,?,sysdate)";
+        Connection conn = null;
+        PreparedStatement pstmt = null;
+
+        try{
+            conn = DBManager.getConnection();
+            pstmt =conn.prepareStatement(sql);
+
+            pstmt.setString(1, vo.getId());
+            pstmt.setInt(2, vo.getNo());
+
+            pstmt.executeUpdate();
+
+        }catch (Exception e){
+            e.printStackTrace();
+        }finally {
+            DBManager.close(conn, pstmt);
+        }
     }
 }
