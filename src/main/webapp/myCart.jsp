@@ -12,34 +12,25 @@
 <html>
 <head>
   <title>cart</title>
-  <link rel="stylesheet" type="text/css" href="css/style.css">
+  <link rel="stylesheet" type="text/css" href="css/cart.css">
 </head>
 <body>
 <form action="/hello-servlet" method="post">
+  <input type="hidden" name="command" value="orderUpdate">
   <h2>장바구니</h2>
   <table class="list" border="1px" align="center">
     <c:forEach var="product" items="${product}">
-      <tr>
-        <td></td>
-        <td>상품명</td>
-        <td>가격</td>
-        <td></td>
-      </tr>
-    <tr class="record">
+    <tr>
       <input type="checkbox" name="">
-      <td> <img src="${product.image}"></td>
-      <td>
-        <a href="Servlet?command=productDetail&no=${product.no}">${product.title}</a>
-        <br><br><br>
-        <fmt:formatNumber value="${product.price}" pattern="###,###,###"/>원
-      </td>
+      <td>${product.id}</td>
+      <td>${product.no}</td>
       <td><input type="hidden" name="id" value="${product.id}"></td>
       <td><input type="hidden" name="no" value="${product.no}"></td>
     </tr>
     </c:forEach>
   </table>
-  <div id="cart">
-    <input type="submit" value="주문하기" onclick="">
+  <div id="cart" align="center">
+    <input type="submit" value="주문하기" >
     <input type="reset" value="취소">
   </div>
 </form>

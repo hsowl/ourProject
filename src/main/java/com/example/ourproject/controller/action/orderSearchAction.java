@@ -18,8 +18,8 @@ public class orderSearchAction implements Action{
 
         DAO dao = DAO.getInstance();
 
-        int num = -1;
-        num = Integer.parseInt(request.getParameter("num"));
+
+        int num = Integer.parseInt(request.getParameter("num"));
 
         List<OrderSearchVO> list = dao.orderSelectDate(num,id);
 
