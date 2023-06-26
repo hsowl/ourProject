@@ -27,6 +27,7 @@
       <td>${product.price}</td>
       <td>${product.id}</td>
       <td>${product.no}</td>
+      <td></td>
       <td><input type="hidden" name="id" value="${product.id}"></td>
       <td><input type="hidden" name="no" value="${product.no}"></td>
     </tr>
