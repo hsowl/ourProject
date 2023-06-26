@@ -18,8 +18,9 @@
     <div class="top-bar">
         <div class="container">
             <div class="search-bar">
-                <form method="get" action="Servlet?command=search">
-                    <input type="text" placeholder="검색어를 입력하세요">
+                <form method="get" action="Servlet">
+                    <input type="hidden" name="command" value="search">
+                    <input type="text" placeholder="검색어를 입력하세요" name="keyword">
                     <button type="submit">검색</button>
                 </form>
             </div>
