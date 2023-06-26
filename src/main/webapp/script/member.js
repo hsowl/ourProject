@@ -54,12 +54,12 @@ function idCheck(){
         return false;
     }
 
-    var url = "Servlet?command=idCheck"  // + document.frm.id.value;
-    window.open(url, "_blank_1", "toolbar=no, menubar=no, scrollbars=yes, resizable=no, width=450, height=200");
+    var url = "Servlet?command=idCheck&id=" + document.frm.id.value;
+    window.open(url, "_blank_1", "toolbar=no, menubar=no, scrollbars=yes, resizable=no, width=500, height=500");
 }
 
 function idok(){
-    opener.frm.id.value = document.frm.id.value;
-    opener.frm.reid.value = document.frm.id.value;
+    // opener.frm.id.value = document.frm.id.value;
+    // opener.frm.reid.value = document.frm.id.value;
     self.close();
 }
