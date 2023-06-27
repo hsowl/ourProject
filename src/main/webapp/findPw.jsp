@@ -25,9 +25,6 @@
         <div class="mb-3">
             아이디 : <input type="text" class="form-control" name="id">
         </div>
-        <div class="mb-3">
-            이름 : <input type="text" class="form-control" name="name">
-        </div>
         <br>
         <button style="width:100%" type="submit" class="btn btn-danger">비밀번호 재설정</button>
         <br>

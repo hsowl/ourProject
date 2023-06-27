@@ -141,6 +141,30 @@
     <div class="bg-danger shadow-sm mx-auto" style="width: 53%; height: 400px; border-radius: 21px 21px 21px 21px;"><a href="Servlet?command=productDetail&no=${product.no}"><img src=${product.image}></a></div>
 </div>
 </c:forEach>
+    <table class="list">
+        <c:forEach var="product" items="${product}">
+            <%--            <tr class="product">--%>
+            <%--                <td><img height="250px" width="300px" src= ${product.image}></td>--%>
+            <%--                <td width="300px">--%>
+            <%--                    <a href="Servlet?command=productDetail&no=${product.no}">${product.title}</a>--%>
+            <%--                    <br><br><br>--%>
+            <%--                    <hr>--%>
+            <%--                    가격 : <fmt:formatNumber value="${product.price}" pattern="###,###,###"/>원--%>
+            <%--                </td>--%>
+            <%--            </tr>--%>
+            <tr class="product">
+                <td><img height="250px" width="300px" src= ${product.image}></td>
+            </tr>
+            <tr>
+                <td>
+                    <a href="Servlet?command=productDetail&no=${product.no}">${product.title}</a>
+                </td>
+            </tr>
+            <tr>
+                <td>가격 : <fmt:formatNumber value="${product.price}" pattern="###,###,###"/>원</td>
+            </tr>
+        </c:forEach>
+    </table>
 </div>
 
 <%@ include file="footer.jsp" %>
