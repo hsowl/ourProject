@@ -130,7 +130,7 @@
     }
 </script>
 <div id="jongjin" align="center">
-    <table border="1px" class="list">
+    <table class="list">
         <c:forEach var="product" items="${product}">
             <%--            <tr class="product">--%>
             <%--                <td><img height="250px" width="300px" src= ${product.image}></td>--%>

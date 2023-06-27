@@ -20,7 +20,9 @@ public class updatePwAction implements Action {
 
         DAO Dao = DAO.getInstance();
 
+
         if (pw.equals(repw)) {
+            Dao.resetPw(id,pw);
             url = "login.jsp";
             request.setAttribute("message", "로그인 페이지로 이동합니다.");
         } else {

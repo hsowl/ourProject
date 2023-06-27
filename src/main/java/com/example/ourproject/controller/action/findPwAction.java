@@ -16,6 +16,8 @@ public class findPwAction implements Action {
         int result = -1;
         String id = request.getParameter("id");
 
+        System.out.println(id);
+
         DAO Dao = DAO.getInstance();
         result = Dao.findPw(id);
 
@@ -23,7 +25,7 @@ public class findPwAction implements Action {
             url = "updatePw.jsp";
             request.setAttribute("id", id);
         } else if (result == -1) {
-            request.setAttribute("message","아이디가 잘못되었습니다.");
+            request.setAttribute("message","아이디 혹은 이름이 잘못되었습니다.");
         }
 
         RequestDispatcher dis = request.getRequestDispatcher(url);
