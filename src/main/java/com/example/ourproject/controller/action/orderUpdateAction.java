@@ -15,7 +15,6 @@ import java.util.List;
 public class orderUpdateAction implements Action{
     @Override
     public void execute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        String url = "orderSearch.jsp";
         HttpSession session = request.getSession();
         MemberVO mvo = (MemberVO)session.getAttribute("id");
 
@@ -30,13 +29,6 @@ public class orderUpdateAction implements Action{
             vo.setId(mvo.getId());
             dao.insertOrder(vo);
         }
-
-
-        List<OrderSearchVO> list = dao.orderSelectDate(-1,mvo.getId());
-        request.setAttribute("orderSearch",list);
-
-        RequestDispatcher dis = request.getRequestDispatcher(url);
-        dis.forward(request, response);
 
         new orderSearchAction().execute(request, response);
     }
