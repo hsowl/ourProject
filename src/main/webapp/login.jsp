@@ -36,14 +36,19 @@
       </div>
       <button style="width:100%" type="submit" class="btn btn-danger" onclick="return loginCheck()">로그인</button>
     <br>
-    <div class="mb-3 d-flex align-items-center">
-      <button type="button" class="btn" onclick="location.href='joinMember.jsp'">회원가입</button>
-      <div class="btn-group" role="group" aria-label="Basic outlined example">
-        <button type="button" class="btn" onclick="location.href='findId.jsp'">아이디찾기</button>
-        <button type="button" class="btn" onclick="location.href='findPw.jsp'">비밀번호찾기</button>
-      </div>
 
-</div>
-</form>
+    <div class="alert alert" role="alert">
+      ${message}
+    </div>
+
+    <div class="mb-3 d-flex align-items-center">
+      <button type="button" class="btn btn-outline-danger" onclick="location.href='joinMember.jsp'">회원가입</button>
+      <div class="btn-group" role="group" aria-label="Basic outlined example">
+      <button type="button" class="btn" onclick="location.href='findId.jsp'">아이디찾기</button>
+      <button type="button" class="btn" onclick="location.href='findPw.jsp'">비밀번호찾기</button>
+      </div>
+    </div>
+
+  </form>
 
 <%@ include file="./include/bottom.jsp" %>
