@@ -147,9 +147,9 @@
                  style="width: 53%; height: 400px; border-radius: 21px 21px 21px 21px;"><a
                     href="Servlet?command=productDetail&no=${product.no}"><img src=${product.image}></a></div>
         </div>
+        </c:forEach>
     </div>
 </div>
-</c:forEach>
 
 
 <%@ include file="footer.jsp" %>
