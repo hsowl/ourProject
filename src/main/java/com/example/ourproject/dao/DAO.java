@@ -602,5 +602,23 @@ public class DAO {
         }
         return result;
     }
+
+    public void deleteBoard(int seq) {
+        Connection conn = null;
+        PreparedStatement pstmt = null;
+        String sql = "delete from QA where seq=?";
+
+        try{
+            conn = DBManager.getConnection();
+            pstmt = conn.prepareStatement(sql);
+
+            pstmt.setInt(1,seq);
+            pstmt.executeUpdate();
+        } catch(Exception e) {
+            e.printStackTrace();
+        } finally {
+            DBManager.close(conn, pstmt);
+        }
+    }
 }
 
