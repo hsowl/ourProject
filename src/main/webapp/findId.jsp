@@ -26,10 +26,10 @@
       이름 : <input type="text" class="form-control" name="name">
     </div>
     <div class="mb-3">
-      핸드폰 번호 : <input type="text" class="form-control" name="phone" oninput="findCheck()">
+      핸드폰 번호 : <input type="text" class="form-control" name="phone">
     </div>
     <br>
-    <button style="width:100%" type="submit" class="btn btn-danger">아이디 찾기</button>
+    <button style="width:100%" type="submit" class="btn btn-danger" onclick="findCheck()">아이디 찾기</button>
 
 <%--    <c:if test="${name.pw && name.name != null}">--%>
 <%--      <script type="text/javascript">--%>

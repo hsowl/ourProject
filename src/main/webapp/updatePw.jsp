@@ -22,7 +22,7 @@
   <form name="frm" method="post" action="Servlet">
     <input type="hidden" name="command" value="updatePw">
     <div class="mb-3">
-      아이디 : <input type="text" class="form-control" name="${id}" readonly>
+      아이디 : <input type="text" class="form-control" value="${id}" name="id" readonly>
     </div>
     <div class="mb-3">
       비밀번호 재설정: <input type="password" class="form-control" name="pw">
