@@ -77,9 +77,9 @@ public class DAO {
         }
         return result;
     }
-    public QAVO selectOneBoardByNo(int no) {
+    public QAVO selectOneBoardBySeq(int seq) {
         QAVO vo = null;
-        String sql = "select * from board where no=?";
+        String sql = "select * from board where seq=?";
         Connection conn = null;
         PreparedStatement pstmt = null;
         ResultSet rs = null;
@@ -87,12 +87,15 @@ public class DAO {
         try{
             conn = DBManager.getConnection();
             pstmt=conn.prepareStatement(sql);
-            pstmt.setInt(1,no);
+            pstmt.setInt(1,seq);
             rs=pstmt.executeQuery();
 
             if (rs.next()){
                 vo=new QAVO();
+                vo.setSeq(rs.getInt("seq"));
                 vo.setNo(rs.getInt("no"));
+                vo.setId(rs.getString("id"));
+                vo.setId(rs.getString("pass"));
                 vo.setTitle(rs.getString("title"));
                 vo.setContent(rs.getString("content"));
             }
@@ -174,6 +177,7 @@ public class DAO {
 
             while (rs.next()){
                 QAVO vo = new QAVO();
+                vo.setSeq(rs.getInt("seq"));
                 vo.setNo(rs.getInt("no"));
                 vo.setId(rs.getString("id"));
                 vo.setPass(rs.getString("pass"));
@@ -266,17 +270,19 @@ public class DAO {
         PreparedStatement pstmt = null;
         ResultSet rs = null;
 
-        CartVO cvo = new CartVO();
         String sql = "select * from cart where id=?";
 
         try {
             conn = DBManager.getConnection();
             pstmt = conn.prepareStatement(sql);
-            pstmt.setString(1, id);
+            pstmt.setString(1,id);
             rs = pstmt.executeQuery();
+
             while (rs.next()) {
-                int no= rs.getInt("no");
-                ProductVO pvo =selectOneProductByNo(no);
+                CartVO cvo = new CartVO();
+
+                int no = rs.getInt("no");
+                ProductVO pvo = selectOneProductByNo(no);
                 cvo.setImage(pvo.getImage());
                 cvo.setTitle(pvo.getTitle());
                 cvo.setPrice(pvo.getPrice());
@@ -352,11 +358,11 @@ public class DAO {
 
         try {
             if(num==-1){
-                sql ="select * form orderSearch";
+                sql ="select * from ordersearch where id=?";
             } else if (num==0) {
-                sql ="select * from orderSearch Where orderdate<=add_months(sysdate,-1)";
+                sql ="select * from ordersearch where id=? and orderdate<=add_months(sysdate,-1) ";
             } else {
-                sql = "select * from orderSearch Where orderdate<=add_months(sysdate,-3)";
+                sql = "select * from orderSearch Where orderdate<=add_months(sysdate,-3) and id=?";
             }
             conn = DBManager.getConnection();
             pstmt = conn.prepareStatement(sql);
@@ -434,10 +440,12 @@ public class DAO {
         return list;
     }
 
-    public MemberVO findId(String name, String pw) {
-        MemberVO vo = null;
+    public int findId(String name, String phone) {
+        int result = 0;
 
-        String sql = "select * from member where (name=? and pw=?)";
+        MemberVO vo = new MemberVO();
+
+        String sql = "select * from member where (name=? and phone=?)";
         Connection conn = null;
         PreparedStatement pstmt = null;
         ResultSet rs = null;
@@ -446,27 +454,25 @@ public class DAO {
             conn = DBManager.getConnection();
             pstmt = conn.prepareStatement(sql);
             pstmt.setString(1,name);
-            pstmt.setString(2,pw);
+            pstmt.setString(2,phone);
             rs = pstmt.executeQuery();
 
+
             if(rs.next()) {
-                vo = new MemberVO();
-
-                vo.setId(rs.getString("id"));
-                vo.setPw(rs.getString("pw"));
-                vo.setName(rs.getString("name"));
-
+                result = 1;
+            } else {
+                result = -1;
             }
         }catch(Exception e) {
             e.printStackTrace();
         }finally {
             DBManager.close(conn,pstmt,rs);
         }
-        return vo;
+        return result;
     }
     public int insertBoard(QAVO vo) {
         int result = -1;
-        String sql = "insert into QA(no,id,pass,title,content) values(?,?,?,?,?)";
+        String sql = "insert into QA(seq,no,id,pass,title,content) values(qna_seq.NEXTVAL,?,?,?,?,?)";
         Connection conn = null;
         PreparedStatement pstmt = null;
         ResultSet rs = null;
@@ -478,7 +484,7 @@ public class DAO {
             pstmt.setString(2, vo.getId());
             pstmt.setString(3, vo.getPass());
             pstmt.setString(4, vo.getTitle());
-            pstmt.setString(5, vo.getContent());
+            pstmt.setString(5,vo.getContent());
             result=pstmt.executeUpdate();
 
         }catch(Exception e) {
@@ -491,5 +497,34 @@ public class DAO {
             }
         }
         return result;
+    }
+    public MemberVO getId(String name, String phone) {
+        MemberVO vo = new MemberVO();
+
+        String sql = "select * from member where (name=? and phone=?)";
+        Connection conn = null;
+        PreparedStatement pstmt = null;
+        ResultSet rs = null;
+
+        try {
+            conn = DBManager.getConnection();
+            pstmt = conn.prepareStatement(sql);
+            pstmt.setString(1,name);
+            pstmt.setString(2,phone);
+            rs = pstmt.executeQuery();
+
+
+            if(rs.next()) {
+                vo.setId(rs.getString("id"));
+                vo.setName(rs.getString("name"));
+            }
+        }catch(Exception e) {
+            e.printStackTrace();
+        }finally {
+            DBManager.close(conn,pstmt,rs);
+        }
+
+
+        return vo;
     }
 }

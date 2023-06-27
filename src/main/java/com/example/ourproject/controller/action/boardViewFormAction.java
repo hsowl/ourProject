@@ -8,16 +8,15 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 
 import java.io.IOException;
-import java.io.Reader;
 
-public class BoardViewAction implements Action {
+public class boardViewFormAction implements Action {
     @Override
     public void execute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        int no = Integer.parseInt(request.getParameter("no"));
+        int seq = Integer.parseInt(request.getParameter("seq"));
         DAO dao = DAO.getInstance();
-        QAVO vo =dao.selectOneBoardByNo(no);
+        QAVO vo =dao.selectOneBoardBySeq(seq);
         request.setAttribute("Board",vo);
-        String url = "checkSuccess.jsp";
+        String url = "boardViewForm.jsp";
 
         RequestDispatcher dis = request.getRequestDispatcher(url);
         dis.forward(request,response);

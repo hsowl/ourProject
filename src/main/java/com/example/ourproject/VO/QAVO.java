@@ -8,6 +8,7 @@ import lombok.ToString;
 @Setter
 @ToString
 public class QAVO {
+    private int seq;
     private int no;
     private String id;
     private String pass;

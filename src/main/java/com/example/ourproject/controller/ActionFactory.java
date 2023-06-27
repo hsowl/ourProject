@@ -38,8 +38,8 @@ public class ActionFactory {
             action = new infoUpdateAction();
         }else if (command.equals("logout")) {
             action = new logoutAction();
-        }else if (command.equals("board_view")) {
-            action = new BoardViewAction();
+        }else if (command.equals("boardViewForm")) {
+            action = new boardViewFormAction();
         }else if (command.equals("pwCheck")) {
             action = new pwCheckAction();
         }else if (command.equals("search")) {
@@ -50,8 +50,8 @@ public class ActionFactory {
             action = new findIdAction();
         }else if (command.equals("findPw")) {
             action = new findPwAction();
-        }else if(command.equals("boardWriteForm")){
-            action = new boardWriteFormAction();
+        }else if(command.equals("boardInsertForm")){
+            action = new boardInsertFormAction();
         }else if(command.equals("boardInsert")){
             action = new boardInsertAction();
         }
