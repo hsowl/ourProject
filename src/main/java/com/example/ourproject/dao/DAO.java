@@ -95,7 +95,7 @@ public class DAO {
                 vo.setSeq(rs.getInt("seq"));
                 vo.setNo(rs.getInt("no"));
                 vo.setId(rs.getString("id"));
-                vo.setId(rs.getString("pass"));
+                vo.setPass(rs.getString("pass"));
                 vo.setTitle(rs.getString("title"));
                 vo.setContent(rs.getString("content"));
             }
