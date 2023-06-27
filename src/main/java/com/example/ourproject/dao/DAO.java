@@ -79,7 +79,7 @@ public class DAO {
     }
     public QAVO selectOneBoardBySeq(int seq) {
         QAVO vo = null;
-        String sql = "select * from board where seq=?";
+        String sql = "select * from QA where seq=?";
         Connection conn = null;
         PreparedStatement pstmt = null;
         ResultSet rs = null;

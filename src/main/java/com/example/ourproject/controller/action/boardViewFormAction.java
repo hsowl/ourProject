@@ -15,7 +15,7 @@ public class boardViewFormAction implements Action {
         int seq = Integer.parseInt(request.getParameter("seq"));
         DAO dao = DAO.getInstance();
         QAVO vo =dao.selectOneBoardBySeq(seq);
-        request.setAttribute("Board",vo);
+        request.setAttribute("board",vo);
         String url = "boardViewForm.jsp";
 
         RequestDispatcher dis = request.getRequestDispatcher(url);
