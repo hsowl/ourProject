@@ -18,28 +18,28 @@
         .slideshow-container {
             position: relative;
             width: 1000px;
-            margin: auto;
-            height: 300px;
+            /*margin: auto;*/
+            /*height: 300px;*/
         }
 
         /* 이미지 슬라이드 스타일 */
         .mySlides {
             display: none;
             width: 100px;
-            height: 200px;
+            /*height: 200px;*/
         }
 
-        .mySlides img{
+        .mySlides img {
             width: 1900px;
             height: 500px;
         }
 
         /* 이미지 캡션 스타일 */
         .caption {
-            position: absolute;
+            /*position: absolute;*/
             bottom: 0;
             left: 0;
-            width: 100%;
+            /*width: 100%;*/
             background-color: rgba(0, 0, 0, 0.5);
             color: #fff;
             padding: 10px;
@@ -82,10 +82,6 @@
     <div class="mySlides">
         <img src="https://view01.wemep.co.kr/wmp-main/58/202306/26/pmb_zawt8t6vfk5t.png" alt="Slide 8">
     </div>
-
-    <!-- 이전/다음 버튼 -->
-    <a class="prev" onclick="changeSlide(-1)">&#10094;</a>
-    <a class="next" onclick="changeSlide(1)">&#10095;</a>
 </div>
 
 <script>
@@ -136,14 +132,25 @@
 <div id="jongjin" align="center">
     <table border="1px" class="list">
         <c:forEach var="product" items="${product}">
+            <%--            <tr class="product">--%>
+            <%--                <td><img height="250px" width="300px" src= ${product.image}></td>--%>
+            <%--                <td width="300px">--%>
+            <%--                    <a href="Servlet?command=productDetail&no=${product.no}">${product.title}</a>--%>
+            <%--                    <br><br><br>--%>
+            <%--                    <hr>--%>
+            <%--                    가격 : <fmt:formatNumber value="${product.price}" pattern="###,###,###"/>원--%>
+            <%--                </td>--%>
+            <%--            </tr>--%>
             <tr class="product">
                 <td><img height="250px" width="300px" src= ${product.image}></td>
-                <td width="300px">
+            </tr>
+            <tr>
+                <td>
                     <a href="Servlet?command=productDetail&no=${product.no}">${product.title}</a>
-                    <br><br><br>
-                    <hr>
-                    가격 : <fmt:formatNumber value="${product.price}" pattern="###,###,###"/>원
                 </td>
+            </tr>
+            <tr>
+                <td>가격 : <fmt:formatNumber value="${product.price}" pattern="###,###,###"/>원</td>
             </tr>
         </c:forEach>
     </table>
