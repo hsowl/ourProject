@@ -527,4 +527,56 @@ public class DAO {
 
         return vo;
     }
+
+    public int findPw(String id) {
+        int result = 0;
+
+        MemberVO vo = new MemberVO();
+
+        String sql = "select * from member where id=?";
+        Connection conn = null;
+        PreparedStatement pstmt = null;
+        ResultSet rs = null;
+
+        try {
+            conn = DBManager.getConnection();
+            pstmt = conn.prepareStatement(sql);
+            pstmt.setString(1, id);
+            rs = pstmt.executeQuery();
+
+            if (rs.next()) {
+                result = 1;
+            } else {
+                result = -1;
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            DBManager.close(conn, pstmt, rs);
+        }
+        return result;
+    }
+
+    public void resetPw(String id, String pw) {
+        String sql = "update member set pw=? where id=?";
+        Connection conn = null;
+        PreparedStatement pstmt = null;
+
+        try {
+            conn = DBManager.getConnection();
+            pstmt = conn.prepareStatement(sql);
+            pstmt.setString(1, pw);
+            pstmt.setString(2, id);
+
+            pstmt.executeUpdate();
+
+            System.out.println(id+pw);
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            DBManager.close(conn, pstmt);
+        }
+    }
 }
+

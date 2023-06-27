@@ -54,6 +54,8 @@ public class ActionFactory {
             action = new boardInsertFormAction();
         }else if(command.equals("boardInsert")){
             action = new boardInsertAction();
+        }else if(command.equals("updatePw")){
+            action = new updatePwAction();
         }
         return action;
     }
