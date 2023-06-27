@@ -8,29 +8,31 @@
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ include file="header.jsp"%>
-<link rel="stylesheet" type="text/css" href="css/style.css">
+<link rel="stylesheet" type="text/css" href="css/cart.css">
 <html>
 <head>
   <title>cart</title>
   <link rel="stylesheet" type="text/css" href="css/cart.css">
 </head>
 <body>
-<form action="/hello-servlet" method="post">
+<form action="helloServlet" method="post">
   <input type="hidden" name="command" value="orderUpdate">
-  <h2>장바구니</h2>
+  <input type="hidden" name="num" value="-1">
+  <h2 style="background-color: #ff5a36; ">장바구니</h2>
   <table class="list" border="1px" align="center">
-    <c:forEach var="product" items="${product}">
-    <tr>
-      <input type="checkbox" name="">
-      <td><img src = ${product.image}></td>
-      <td>${product.title}</td>
-      <td>${product.price}</td>
-      <td>${product.id}</td>
-      <td>${product.no}</td>
-      <td></td>
-      <td><input type="hidden" name="id" value="${product.id}"></td>
-      <td><input type="hidden" name="no" value="${product.no}"></td>
-    </tr>
+    <c:forEach var="Cart" items="${Cart}" varStatus="status">
+      <tr style="height: 90px; background-color: #f2f2f2;">
+        <td style="text-align: left; text-align: center; border-right: #ff5a36;">
+          <input type="checkbox" name="checkbox">
+        </td>
+        <td style="border-left: none; border-right: none;"><img style="width: 150px;" src = ${Cart.image}></td>
+        <td style="text-align: left; padding-left: 10px; border-left: none; font-weight: bold;">${Cart.title}</td>
+        <td><span style="padding-left: 10px;"> ${Cart.price}</span></td>
+        <td>-</td>
+        <td>기본배송</td>
+        <input type="hidden" name="id" value="${Cart.id}">
+        <input type="hidden" name="no" value="${Cart.no}">
+      </tr>
     </c:forEach>
   </table>
   <div id="cart" align="center">
