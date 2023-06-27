@@ -437,7 +437,7 @@ public class DAO {
     public MemberVO findId(String name, String pw) {
         MemberVO vo = null;
 
-        String sql = "select id from member where (name=? and pw=?)";
+        String sql = "select * from member where (name=? and pw=?)";
         Connection conn = null;
         PreparedStatement pstmt = null;
         ResultSet rs = null;
