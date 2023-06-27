@@ -22,10 +22,15 @@ public class orderUpdateAction implements Action{
         DAO dao = DAO.getInstance();
         OrderSearchVO vo = new OrderSearchVO();
 
-        vo.setId(request.getParameter("id"));
-        vo.setNo(Integer.parseInt(request.getParameter("no")));
+        String[] listNo = request.getParameterValues("no");
 
-        dao.insertOrder(vo);
+        for( int i=0; i<listNo.length; i++) {
+            int no = Integer.parseInt(listNo[i]);
+            vo.setNo(no);
+            dao.insertOrder(vo);
+        }
+
+
         List<OrderSearchVO> list = dao.orderSelectDate(-1,mvo.getId());
         request.setAttribute("orderSearch",list);
 

@@ -23,15 +23,13 @@
     <c:forEach var="Cart" items="${Cart}" varStatus="status">
       <tr style="height: 90px; background-color: #f2f2f2;">
         <td style="text-align: left; text-align: center; border-right: #ff5a36;">
-          <input type="checkbox" name="checkbox">
+          <input type="checkbox" name="checkbox" value="${cart.no}">
         </td>
         <td style="border-left: none; border-right: none;"><img style="width: 150px;" src = ${Cart.image}></td>
         <td style="text-align: left; padding-left: 10px; border-left: none; font-weight: bold;">${Cart.title}</td>
         <td><span style="padding-left: 10px;"> ${Cart.price}</span></td>
         <td>-</td>
         <td>기본배송</td>
-        <input type="hidden" name="id" value="${Cart.id}">
-        <input type="hidden" name="no" value="${Cart.no}">
       </tr>
     </c:forEach>
   </table>

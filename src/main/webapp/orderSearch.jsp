@@ -22,21 +22,22 @@
         <option value="1">3개월 내</option>
     </select>
     <input type="hidden" name="command" value="orderSearch">
-    <input type="submit" value="검색">
+    <input type="submit" value="조회">
+    <br><br>
     <table class="list" border="1px" align="center">
         <tr>
             <td></td>
-            <td></td>
+            <td>상품코드</td>
             <td>상품명</td>
             <td>가격</td>
             <td>주문일자</td>
         </tr>
     <c:forEach var="orderSearch" items="${orderSearch}">
             <tr class="record">
-                <td> <img src="${product.image}"></td>
+                <td style="border-left: none; border-right: none;"><img style="width: 150px;" src = ${Cart.image}></td>
                 <td>${orderSearch.no}</td>
-                <td>${orderSearch.title}</td>
-                <td>${orderSearch.price}원</td>
+                <td style="text-align: left; padding-left: 10px; border-left: none; font-weight: bold;">${Cart.title}</td>
+                <td><span style="padding-left: 10px;"> ${Cart.price}</span></td>
                 <td>${orderSearch.orderDate}</td>
             </tr>
     </table>
