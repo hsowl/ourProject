@@ -40,8 +40,8 @@
             <td><span style="padding-left: 10px;"> ${orderSearch.price}</span></td>
             <td>${orderSearch.orderDate}</td>
         </tr>
+        </c:forEach>
     </table>
-    </c:forEach>
     <div >
         <input type="button" value="메인화면으로 가기" onclick="location='Servlet?command=main'">
     </div>

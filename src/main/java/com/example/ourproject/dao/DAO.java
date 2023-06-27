@@ -622,7 +622,7 @@ public class DAO {
         }
     }
     public void deleteCart(OrderSearchVO vo) {
-        String sql = "delete from cart no = ?";
+        String sql = "delete from cart where no = ?";
         Connection conn = null;
         PreparedStatement pstmt = null;
 
