@@ -23,7 +23,7 @@
       <tr>
         <th>작성자</th>
         <td><input type="text" size="12" name="id"
-                   value="${board.id}" readonly="true"> * 필수</td>
+                   value="${board.id}" readonly="true"></td>
       </tr>
       <tr>
         <th>비밀번호</th>
