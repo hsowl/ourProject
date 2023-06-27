@@ -377,6 +377,7 @@ public class DAO {
                 vo.setPrice(pvo.getPrice());
                 vo.setId(rs.getString("id"));
                 vo.setNo(rs.getInt("no"));
+                vo.setOrderDate(rs.getTimestamp("orderdate"));
                 list.add(vo);
             }
 
@@ -617,6 +618,25 @@ public class DAO {
         } catch(Exception e) {
             e.printStackTrace();
         } finally {
+            DBManager.close(conn, pstmt);
+        }
+    }
+    public void deleteCart(OrderSearchVO vo) {
+        String sql = "delete from cart no = ?";
+        Connection conn = null;
+        PreparedStatement pstmt = null;
+
+        try{
+            conn = DBManager.getConnection();
+            pstmt =conn.prepareStatement(sql);
+
+            pstmt.setInt(1, vo.getNo());
+
+            pstmt.executeUpdate();
+
+        }catch (Exception e){
+            e.printStackTrace();
+        }finally {
             DBManager.close(conn, pstmt);
         }
     }

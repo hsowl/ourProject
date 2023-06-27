@@ -23,6 +23,7 @@ public class orderUpdateAction implements Action{
 
         String[] listNo = request.getParameterValues("no");
 
+        //DB 저장
         for( int i=0; i<listNo.length; i++) {
             int no = Integer.parseInt(listNo[i]);
             vo.setNo(no);
@@ -30,6 +31,22 @@ public class orderUpdateAction implements Action{
             dao.insertOrder(vo);
         }
 
+        //주문한 제품 Cart DB 삭제
+        for( int i=0; i<listNo.length; i++) {
+            int no = Integer.parseInt(listNo[i]);
+            vo.setNo(no);
+            vo.setId(mvo.getId());
+            dao.deleteCart(vo);
+        }
+
+        List<OrderSearchVO> list = dao.orderSelectDate(-1,mvo.getId());
+
         new orderSearchAction().execute(request, response);
+
+        request.setAttribute("orderSearch",list);
+
+        String url = "orderSearch.jsp";
+        RequestDispatcher dis = request.getRequestDispatcher(url);
+        dis.forward(request,response);
     }
 }
