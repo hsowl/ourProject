@@ -66,7 +66,7 @@
                     </c:when>
                     <c:otherwise>
                         <li>
-                            <pre>                                                                      </pre>
+                            <pre>                                                            </pre>
                         </li>
                         <li><a href="login.jsp">로그인</a></li>
                         <li><a href="joinMember.jsp">회원가입</a></li>
