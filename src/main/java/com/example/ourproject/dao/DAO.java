@@ -578,5 +578,29 @@ public class DAO {
             DBManager.close(conn, pstmt);
         }
     }
+    public int updateBoard(QAVO vo) {
+        int result = -1;
+        Connection conn = null;
+        PreparedStatement pstmt = null;
+        String sql = "update QA set no=?, id=?, pass=?, title=?, content=? where seq=?";
+
+        try{
+            conn = DBManager.getConnection();
+            pstmt = conn.prepareStatement(sql);
+
+            pstmt.setInt(1,vo.getNo());
+            pstmt.setString(2, vo.getId());
+            pstmt.setString(3, vo.getPass());
+            pstmt.setString(4, vo.getTitle());
+            pstmt.setString(5, vo.getContent());
+            pstmt.setInt(6,vo.getSeq());
+            pstmt.executeUpdate();
+        } catch(Exception e) {
+            e.printStackTrace();
+        } finally {
+            DBManager.close(conn, pstmt);
+        }
+        return result;
+    }
 }
 
