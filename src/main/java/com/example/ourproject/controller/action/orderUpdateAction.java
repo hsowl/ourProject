@@ -27,6 +27,7 @@ public class orderUpdateAction implements Action{
         for( int i=0; i<listNo.length; i++) {
             int no = Integer.parseInt(listNo[i]);
             vo.setNo(no);
+            vo.setId(mvo.getId());
             dao.insertOrder(vo);
         }
 
