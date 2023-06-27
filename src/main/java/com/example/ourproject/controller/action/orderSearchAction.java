@@ -31,6 +31,11 @@ public class orderSearchAction implements Action{
 
         List<OrderSearchVO> list = dao.orderSelectDate(chdate,mvo.getId());
 
+        for(int i=0;i<5;i++){
+            System.out.println(list);
+            System.out.println("-------------------------");
+        }
+
         request.setAttribute("orderSearch",list);
 
         RequestDispatcher dis = request.getRequestDispatcher(url);

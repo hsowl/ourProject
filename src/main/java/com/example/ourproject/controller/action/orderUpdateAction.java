@@ -41,11 +41,11 @@ public class orderUpdateAction implements Action{
 
         List<OrderSearchVO> list = dao.orderSelectDate(-1,mvo.getId());
 
-        new orderSearchAction().execute(request, response);
+//        new orderSearchAction().execute(request, response);
 
         request.setAttribute("orderSearch",list);
 
-        String url = "orderSearch.jsp";
+        String url = "Servlet?command=orderSearch";
         RequestDispatcher dis = request.getRequestDispatcher(url);
         dis.forward(request,response);
     }

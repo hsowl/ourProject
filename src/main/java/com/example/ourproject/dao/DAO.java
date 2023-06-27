@@ -349,12 +349,11 @@ public class DAO {
         }
     }
     public List<OrderSearchVO> orderSelectDate(int num, String id){
-        OrderSearchVO vo = new OrderSearchVO();
         List<OrderSearchVO> list = new ArrayList<OrderSearchVO>();
         Connection conn = null;
         PreparedStatement pstmt = null;
         ResultSet rs = null;
-        String sql = "";
+        String sql;
 
         try {
             if(num==-1){
@@ -370,6 +369,7 @@ public class DAO {
             rs = pstmt.executeQuery();
 
             while (rs.next()) {
+                OrderSearchVO vo = new OrderSearchVO();
                 int no=rs.getInt("no");
                 ProductVO pvo= selectOneProductByNo(no);
                 vo.setTitle(pvo.getTitle());
@@ -622,7 +622,7 @@ public class DAO {
         }
     }
     public void deleteCart(OrderSearchVO vo) {
-        String sql = "delete from cart no = ?";
+        String sql = "delete from cart where no = ?";
         Connection conn = null;
         PreparedStatement pstmt = null;
 
