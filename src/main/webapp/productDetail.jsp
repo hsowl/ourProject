@@ -15,6 +15,7 @@
     <script type="text/javascript">
         function insert(url,name){
             window.open(url,name,"width=600, height=500");
+            window.close();
         }
 
     </script>

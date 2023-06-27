@@ -26,7 +26,7 @@
       이름 : <input type="text" class="form-control" name="name">
     </div>
     <div class="mb-3">
-      비밀번호 : <input type="password" class="form-control" name="pw" oninput="findCheck()">
+      핸드폰 번호 : <input type="text" class="form-control" name="phone" oninput="findCheck()">
     </div>
     <br>
     <button style="width:100%" type="submit" class="btn btn-danger">아이디 찾기</button>

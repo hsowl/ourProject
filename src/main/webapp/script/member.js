@@ -70,9 +70,9 @@ function findCheck() {
         frm.name.focus();
         return false;
     }
-    if(document.frm.pw.value=="") {
+    if(document.frm.phone.value=="") {
         alert("비밀번호를 입력해주세요.");
-        frm.pw.focus();
+        frm.phone.focus();
         return false;
     }
 }

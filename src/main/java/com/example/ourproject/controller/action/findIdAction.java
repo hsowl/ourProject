@@ -18,32 +18,17 @@ public class findIdAction implements Action {
         String url = "findId.jsp";
         int result = -1;
         String name = request.getParameter("name");
-        String pw = request.getParameter("pw");
+        String phone = request.getParameter("phone");
 
         DAO Dao = DAO.getInstance();
-        MemberVO vo = Dao.findId(name, pw);
+        result = Dao.findId(name, phone); //vo에 name, phone, id
 
-        if (vo.getName().equals(name) && vo.getPw().equals(pw)) {
-            request.setAttribute("id", vo);
-            request.setAttribute("name", vo);
-            result = 1;
+        if(result == 1){
             url = "findIdResult.jsp";
-        } else if (name == null){
-            request.setAttribute("message", "이름을 입력하여 주십시오.");
-            result = -1;
-            url = "/findId.jsp";
-        } else if (pw == null){
-            request.setAttribute("message", "비밀번호를 입력하여 주십시오.");
-            result = -1;
-            url = "/findId.jsp";
-        } else if (!vo.getName().equals(name)){
-            request.setAttribute("message", "이름을 잘못 입력하셨습니다.");
-            result = -1;
-            url = "/findId.jsp";
-        } else if (!vo.getPw().equals(pw)){
-            request.setAttribute("message", "비밀번호를 잘못 입력하셨습니다.");
-            result = -1;
-            url = "/findId.jsp";
+            MemberVO vo = Dao.getId(name, phone);
+            request.setAttribute("id",vo);
+        } else if (result == -1) {
+            request.setAttribute("message","이름 혹은 전화번호가 잘못되었습니다.");
         }
 
         System.out.println(result);

@@ -24,7 +24,7 @@
     <input type="hidden" name="command" value="login">
     <h1>아이디 찾기</h1>
     <br>
-      ${id.name} 님의 아이디는 ${name.id} 입니다.
+    ${id.name} 님의 아이디는 ${id.id} 입니다.
     <br>
     <br>
     <button style="width:100%" type="submit" class="btn btn-danger" onclick="location.href='login.jsp'">로그인 하러 가기</button>
