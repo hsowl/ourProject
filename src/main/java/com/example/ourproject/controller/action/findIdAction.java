@@ -31,7 +31,6 @@ public class findIdAction implements Action {
             request.setAttribute("message","이름 혹은 전화번호가 잘못되었습니다.");
         }
 
-        System.out.println(result);
         RequestDispatcher dis = request.getRequestDispatcher(url);
         dis.forward(request, response);
     }
