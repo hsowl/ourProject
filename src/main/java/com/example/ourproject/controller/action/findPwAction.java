@@ -16,10 +16,10 @@ public class findPwAction implements Action {
         int result = -1;
         String id = request.getParameter("id");
 
-        System.out.println(id);
 
         DAO Dao = DAO.getInstance();
         result = Dao.findPw(id);
+        System.out.println(result);
 
         if(result == 1){
             url = "updatePw.jsp";
