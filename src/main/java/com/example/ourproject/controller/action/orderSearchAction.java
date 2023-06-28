@@ -22,7 +22,6 @@ public class orderSearchAction implements Action{
         DAO dao = DAO.getInstance();
 
         int chdate;
-        String num;
         if(request.getParameter("num") == null){
             chdate=-1;
         }else {
@@ -30,11 +29,6 @@ public class orderSearchAction implements Action{
         }
 
         List<OrderSearchVO> list = dao.orderSelectDate(chdate,mvo.getId());
-
-        for(int i=0;i<5;i++){
-            System.out.println(list);
-            System.out.println("-------------------------");
-        }
 
         request.setAttribute("orderSearch",list);
 
