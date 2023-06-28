@@ -113,6 +113,10 @@
     function view(url, name) {
         window.open(url, name, "width=600, height=500");
     }
+
+    function close(){
+        window.close()
+    }
 </script>
 
 </body>

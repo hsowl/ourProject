@@ -12,6 +12,7 @@ public class boardInsertFormAction implements Action {
     public void execute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String url = "boardInsertForm.jsp";
         RequestDispatcher dis = request.getRequestDispatcher(url);
+
         dis.forward(request,response);
     }
 }
