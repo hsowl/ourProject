@@ -359,9 +359,9 @@ public class DAO {
             if(num==-1){
                 sql ="select * from ordersearch where id=?";
             } else if (num==0) {
-                sql ="select * from ordersearch where id=? and orderdate<=add_months(sysdate,-1) ";
+                sql ="select * from ordersearch where id=? and orderdate>=add_months(sysdate,-1) ";
             } else {
-                sql = "select * from orderSearch Where orderdate<=add_months(sysdate,-3) and id=?";
+                sql = "select * from orderSearch Where orderdate>=add_months(sysdate,-3) and id=?";
             }
             conn = DBManager.getConnection();
             pstmt = conn.prepareStatement(sql);
