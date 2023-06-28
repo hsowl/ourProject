@@ -639,8 +639,8 @@ public class DAO {
             DBManager.close(conn, pstmt);
         }
     }
-    public void deleteOrderSearch(int no){
-        String sql = "delete from orderSearch where no = ?";
+    public void deleteOrderSearch(int no, String id){
+        String sql = "delete from orderSearch where no =? and id=?";
         Connection conn = null;
         PreparedStatement pstmt = null;
 
@@ -648,6 +648,7 @@ public class DAO {
             conn = DBManager.getConnection();
             pstmt =conn.prepareStatement(sql);
             pstmt.setInt(1,no);
+            pstmt.setString(2, id);
 
             pstmt.executeUpdate();
 
@@ -657,8 +658,8 @@ public class DAO {
             DBManager.close(conn, pstmt);
         }
     }
-    public void deleteCartRadio(int no){
-        String sql = "delete from cart where no = ?";
+    public void deleteCartCheck(int no, String id){
+        String sql = "delete from cart where no = ? and id=?";
         Connection conn = null;
         PreparedStatement pstmt = null;
 
@@ -666,6 +667,7 @@ public class DAO {
             conn = DBManager.getConnection();
             pstmt =conn.prepareStatement(sql);
             pstmt.setInt(1,no);
+            pstmt.setString(2,id);
 
             pstmt.executeUpdate();
 

@@ -36,7 +36,7 @@ public class orderSearchAction implements Action{
 
             for( int i=0; i<listNo.length; i++) {
                 delete = Integer.parseInt(listNo[i]);
-                dao.deleteOrderSearch(delete);
+                dao.deleteOrderSearch(delete,mvo.getId());
 
             }
         }
