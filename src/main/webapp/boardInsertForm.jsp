@@ -43,8 +43,8 @@
             </div>
         </div>
         <div class="text-center">
-            <button type="submit" class="btn btn-primary">등록</button>
-            <button type="reset" class="btn btn-secondary">다시 작성</button>
+            <button type="submit" class="btn btn-outline-danger">등록</button>
+            <button type="reset" class="btn btn-outline-danger">다시 작성</button>
         </div>
     </form>
 </div>

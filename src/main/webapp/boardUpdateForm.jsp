@@ -54,7 +54,7 @@
           <textarea class="form-control" cols="70" rows="15" name="content">${board.content}</textarea>
         </div>
         <div class="text-center">
-          <input type="submit" class="btn btn-primary" value="등록">
+          <input type="submit" class="btn btn-danger" value="등록">
           <input type="reset" class="btn btn-secondary" value="다시 작성">
         </div>
       </div>

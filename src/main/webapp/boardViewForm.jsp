@@ -28,14 +28,18 @@
             <td>${board.id}</td>
             <th>제목</th>
             <td>${board.title}</td>
+        </tr>
+        <tr>
             <th>내용</th>
-            <td>${board.content}</td>
+            <td colspan="3" height="300px">${board.content}</td>
         </tr>
     </table>
     <br> <br>
     <div class="btn-group">
-        <input type="button" class="btn btn-primary" value="게시글 수정" onclick="open_win('Servlet?command=boardConfirmForm&seq=${board.seq}', 'update')">
-        <input type="button" class="btn btn-danger" value="게시글 삭제" onclick="open_win('Servlet?command=boardConfirmForm&seq=${board.seq}', 'delete')">
+        <input type="button" class="btn btn-outline-danger" value="게시글 수정"
+               onclick="open_win('Servlet?command=boardConfirmForm&seq=${board.seq}', 'update')">
+        <input type="button" class="btn btn-outline-danger" value="게시글 삭제"
+               onclick="open_win('Servlet?command=boardConfirmForm&seq=${board.seq}', 'delete')">
     </div>
 </div>
 

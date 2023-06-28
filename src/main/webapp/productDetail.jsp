@@ -18,6 +18,11 @@
         .qna-header {
             margin-top: 2rem;
         }
+        /* 호버 효과 */
+        .table-hover tbody tr:hover {
+            background-color: #f8f9fa;
+            cursor: pointer;
+        }
     </style>
 </head>
 <body>
@@ -42,35 +47,33 @@
                             <input type="hidden" name="command" value="cartUpdate">
                             <input type="hidden" name="id" value="${id.id}">
                             <input type="hidden" name="no" value="${product.no}">
-                            <input type="submit" class="btn btn-primary" value="장바구니에 담기" onclick="return cartConfirmSelection()">
+                            <input type="submit" class="btn btn-danger" value="장바구니에 담기" onclick="return cartConfirmSelection()">
                         </form>
                         <form name="frm2" method="post" action="Servlet">
                             <input type="hidden" name="command" value="directOrderUpdate">
                             <input type="hidden" name="no" value="${product.no}">
-                            <input type="submit" class="btn btn-primary" value="구매하기" onclick="return orderConfirmSelection()">
+                            <input type="submit" class="btn btn-danger" value="구매하기" onclick="return orderConfirmSelection()">
                         </form>
                     </td>
                 </tr>
             </table>
         </div>
     </div>
-
+<br>
+<br>
+<br>
     <div id="qna" class="qna-header">
         <h1 class="display-4">Q&A</h1>
-        <table class="table table-striped">
-            <tr>
-                <td colspan="3">
-                    <input style="text-align: left" type="button" class="btn btn-primary" value="게시글 등록" onclick="insert('Servlet?command=boardInsertForm&no=${product.no}','insert')">
-                </td>
-            </tr>
-            <tr>
+        <table class="table table-striped table-hover">
+                <input type="button" class="btn btn-outline-danger" value="게시글 등록" onclick="insert('Servlet?command=boardInsertForm&no=${product.no}','insert')">
+            <tr >
                 <th>제목</th>
                 <th>내용</th>
                 <th>작성자</th>
             </tr>
             <c:forEach var="board" items="${boardList}">
-                <tr>
-                    <td><a href="#" onclick="view('Servlet?command=boardViewForm&seq=${board.seq}','view'); return false">${board.title}</a></td>
+                <tr onclick="view('Servlet?command=boardViewForm&seq=${board.seq}','view'); return false;">
+                    <td>${board.title}</td>
                     <td>${board.content}</td>
                     <td>${board.id}</td>
                 </tr>
@@ -104,7 +107,7 @@
     }
 
     function insert(url, name) {
-        window.open(url, name, "width=600, height=500");
+        window.open(url, name, "width=600, height=600");
     }
 
     function view(url, name) {
