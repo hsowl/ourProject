@@ -17,23 +17,33 @@
 <body>
 
 <div id="jongjin" align="center">
-    <div class="list">
+    <div class="row">
         <c:forEach var="product" items="${product}">
-            <hr>
-            <div class="bg-body-tertiary me-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden">
-                <div class="my-3 py-3">
-                    <a href="Servlet?command=productDetail&no=${product.no}" style="text-decoration: none; color: black;"><p
-                            class="lead" style="font-size: x-large;">${product.title}</p></a>
-                    <a href="Servlet?command=productDetail&no=${product.no}" style="text-decoration: none; color: black;"><p
-                            class="lead" style="font-size: large;"><fmt:formatNumber value="${product.price}"
-                                                                                     pattern="###,###,###"/>원</p></a>
+            <div class="col-md-4 mb-4">
+                <hr>
+                <div class="bg-body-tertiary me-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden" style="margin-left: 10px; margin-right: 10px;">
+                    <div class="my-3 py-3">
+                        <a href="Servlet?command=productDetail&no=${product.no}" style="text-decoration: none; color: black;">
+                            <p class="lead" style="font-size: large;">${product.title}</p>
+                        </a>
+                        <a href="Servlet?command=productDetail&no=${product.no}" style="text-decoration: none; color: black;">
+                            <p class="lead" style="font-size: medium;">
+                                <fmt:formatNumber value="${product.price}" pattern="###,###,###"/>원
+                            </p>
+                        </a>
+                    </div>
+                    <div class="bg-danger shadow-sm mx-auto" style="width: 100%; height: 400px; border-radius: 21px 21px 21px 21px;">
+                        <a href="Servlet?command=productDetail&no=${product.no}">
+                            <div class="product-image" >
+                                <img src=${product.image}>
+                            </div>
+                        </a>
+                    </div>
                 </div>
-                <div class="bg-danger shadow-sm mx-auto"
-                     style="width: 53%; height: 400px; border-radius: 21px 21px 21px 21px;"><a
-                        href="Servlet?command=productDetail&no=${product.no}"><img src=${product.image}></a></div>
             </div>
         </c:forEach>
     </div>
+</div>
 
 
 <%--    --%>
