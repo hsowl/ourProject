@@ -33,7 +33,7 @@ public class orderUpdateAction implements Action{
 
             new cartAction().execute(request, response);
 
-        }else {
+        }else if(request.getParameterValues("no")!=null){
             OrderSearchVO vo = new OrderSearchVO();
 
             String[] listNo = request.getParameterValues("no");
@@ -58,6 +58,10 @@ public class orderUpdateAction implements Action{
 
             request.setAttribute("orderSearch", list);
 
+            String url = "Servlet?command=orderSearch";
+            RequestDispatcher dis = request.getRequestDispatcher(url);
+            dis.forward(request, response);
+        }else{
             String url = "Servlet?command=orderSearch";
             RequestDispatcher dis = request.getRequestDispatcher(url);
             dis.forward(request, response);
