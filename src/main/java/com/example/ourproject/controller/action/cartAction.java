@@ -21,7 +21,6 @@ public class cartAction implements Action{
         HttpSession session = request.getSession();
         MemberVO mvo = (MemberVO)session.getAttribute("id");
 
-//        String id = request.getParameter("id");
 
         DAO dao = DAO.getInstance();
 

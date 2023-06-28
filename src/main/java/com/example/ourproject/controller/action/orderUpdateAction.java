@@ -56,8 +56,6 @@ public class orderUpdateAction implements Action{
 
             List<OrderSearchVO> list = dao.orderSelectDate(-1, mvo.getId());
 
-//        new orderSearchAction().execute(request, response);
-
             request.setAttribute("orderSearch", list);
 
             String url = "Servlet?command=orderSearch";
