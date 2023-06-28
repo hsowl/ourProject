@@ -21,6 +21,7 @@ public class orderSearchAction implements Action{
 
         DAO dao = DAO.getInstance();
 
+
         int chdate;
         if(request.getParameter("date") == null){
             chdate=-1;
