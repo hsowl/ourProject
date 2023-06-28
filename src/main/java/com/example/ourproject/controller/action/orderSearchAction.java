@@ -23,6 +23,7 @@ public class orderSearchAction implements Action{
 
         int delete;
         int chdate;
+
         if(request.getParameter("date") == null){
             chdate=-1;
         }else {

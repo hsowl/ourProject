@@ -44,6 +44,7 @@
         </c:forEach>
     </table>
     <div >
+        <input type="submit" value="삭제">
         <input type="button" value="메인화면으로 가기" onclick="location='Servlet?command=main'">
     </div>
 </form>
