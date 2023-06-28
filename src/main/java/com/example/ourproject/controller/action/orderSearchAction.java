@@ -21,12 +21,17 @@ public class orderSearchAction implements Action{
 
         DAO dao = DAO.getInstance();
 
-
+        int delete;
         int chdate;
         if(request.getParameter("date") == null){
             chdate=-1;
         }else {
             chdate = Integer.parseInt(request.getParameter("date"));
+        }
+
+        if(request.getParameter("delete")!=null){
+            delete= Integer.parseInt(request.getParameter("delete"));
+            dao.deleteOrderSearch(delete);
         }
 
         List<OrderSearchVO> list = dao.orderSelectDate(chdate,mvo.getId());
