@@ -22,10 +22,10 @@ public class orderSearchAction implements Action{
         DAO dao = DAO.getInstance();
 
         int chdate;
-        if(request.getParameter("num") == null){
+        if(request.getParameter("date") == null){
             chdate=-1;
         }else {
-            chdate = Integer.parseInt(request.getParameter("num"));
+            chdate = Integer.parseInt(request.getParameter("date"));
         }
 
         List<OrderSearchVO> list = dao.orderSelectDate(chdate,mvo.getId());
