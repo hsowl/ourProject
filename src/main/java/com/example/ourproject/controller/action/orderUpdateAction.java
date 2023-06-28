@@ -62,7 +62,7 @@ public class orderUpdateAction implements Action{
             RequestDispatcher dis = request.getRequestDispatcher(url);
             dis.forward(request, response);
         }else{
-            String url = "Servlet?command=orderSearch";
+            String url = "Servlet?command=cart";
             RequestDispatcher dis = request.getRequestDispatcher(url);
             dis.forward(request, response);
         }
