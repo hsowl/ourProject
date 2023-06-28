@@ -386,7 +386,6 @@ public class DAO {
         } finally {
             DBManager.close(conn, pstmt, rs);
         }
-
         return list;
     }
     public void insertOrder(OrderSearchVO vo) {
