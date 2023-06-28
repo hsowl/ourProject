@@ -80,6 +80,9 @@
     <h1>Q&A</h1>
     <table class="list">
         <tr>
+            <td colspan="3"><input style="text-align: left" type="button" value="게시글 등록" onclick="insert('Servlet?command=boardInsertForm&no=${product.no}','insert')"></td>
+        </tr>
+        <tr>
             <th><strong>제목</strong></th>
             <th><strong>내용</strong></th>
             <th><strong>작성자</strong></th>
@@ -92,9 +95,6 @@
                 <td>${board.id}</td>
             </tr>
         </c:forEach>
-        <tr>
-            <input type="button" value="게시글 등록" onclick="insert('Servlet?command=boardInsertForm&no=${product.no}','insert')">
-        </tr>
     </table>
 </div>
 </body>
