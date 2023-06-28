@@ -10,11 +10,11 @@
 <%@ include file="header.jsp"%>
 <html>
 <head>
-    <title>주문조회리스트</title>
+    <title>결제내역리스트</title>
 </head>
 <body>
 <form action="Servlet" method="post">
-    <h2>주문조회</h2>
+    <h2>결제내역조회</h2>
     <h3>주문일자 검색</h3>
     <select name="date">
         <option name="date" value="-1">전체</option>
@@ -37,7 +37,7 @@
             <td style="border-left: none; border-right: none;"><img style="width: 150px;" src = ${orderSearch.image}></td>
             <td>${orderSearch.no}</td>
             <td style="text-align: left; padding-left: 10px; border-left: none; font-weight: bold;">${orderSearch.title}</td>
-            <td><span style="padding-left: 10px;"> ${orderSearch.price}</span></td>
+            <td><span style="padding-left: 10px;"><fmt:formatNumber value="${Cart.price}" pattern="###,###,###"/>원</span></td>
             <td>${orderSearch.orderDate}</td>
         </tr>
         </c:forEach>
