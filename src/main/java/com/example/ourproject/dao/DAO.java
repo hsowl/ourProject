@@ -657,5 +657,23 @@ public class DAO {
             DBManager.close(conn, pstmt);
         }
     }
+    public void deleteCartRadio(int no){
+        String sql = "delete from cart where no = ?";
+        Connection conn = null;
+        PreparedStatement pstmt = null;
+
+        try{
+            conn = DBManager.getConnection();
+            pstmt =conn.prepareStatement(sql);
+            pstmt.setInt(1,no);
+
+            pstmt.executeUpdate();
+
+        }catch (Exception e){
+            e.printStackTrace();
+        }finally {
+            DBManager.close(conn, pstmt);
+        }
+    }
 }
 
