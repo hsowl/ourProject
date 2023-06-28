@@ -18,7 +18,6 @@
 </head>
 <body>
 <form action="Servlet" method="get">
-  <input type="hidden" name="command" value="orderUpdate">
 
   <p class="h4" align="center">장바구니</p>
   <div style="width:1000px; margin:50px auto">
@@ -46,6 +45,7 @@
             <td><span style="padding-left: 10px;"><fmt:formatNumber value="${Cart.price}" pattern="###,###,###"/>원</span></td>
             <td>-</td>
             <td>기본배송</td>
+            <td><input type="checkbox" name="delete" value="${Cart.no}"></td>
           </tr>
           </c:forEach>
         <hr>
@@ -54,7 +54,8 @@
     <hr>
   </div>
   <div id="cart" align="center">
-    <button type="submit" class="btn btn-danger">주문하기</button>
+    <button type="submit" class="btn btn-danger" onclick="location.href='Servlet?command=cart'">삭제</button>
+    <button type="submit" class="btn btn-danger" onclick="location.href='Servlet?command=orderUpdate'">주문하기</button>
     <button type="reset" class="btn btn-outline-secondary">취소</button>
   </div>
 </form>
