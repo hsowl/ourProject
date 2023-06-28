@@ -26,7 +26,7 @@
       <%--  <table name="list" border="1px" align="center">--%>
       <thead>
       <tr>
-        <th scope="col">선택</th>
+        <th scope="col"><input type="checkbox" name="no" value="checkAllNo" onclick="checkAllNo(this)">전체선택</th>
         <th scope="col">상품</th>
         <th scope="col">상품명</th>
         <th scope="col">금액</th>
