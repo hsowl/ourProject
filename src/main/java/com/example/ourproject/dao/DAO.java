@@ -647,7 +647,6 @@ public class DAO {
         try{
             conn = DBManager.getConnection();
             pstmt =conn.prepareStatement(sql);
-
             pstmt.setInt(1,no);
 
             pstmt.executeUpdate();
