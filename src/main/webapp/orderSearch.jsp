@@ -39,7 +39,7 @@
             <td style="text-align: left; padding-left: 10px; border-left: none; font-weight: bold;">${orderSearch.title}</td>
             <td><span style="padding-left: 10px;"><fmt:formatNumber value="${orderSearch.price}" pattern="###,###,###"/>원</span></td>
             <td>${orderSearch.orderDate}</td>
-            <td><input type="radio" name="delete" value="${orderSearch.no}">삭제</td>
+            <td><input type="checkbox" name="delete" value="${orderSearch.no}">삭제</td>
         </tr>
         </c:forEach>
     </table>

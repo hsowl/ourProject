@@ -46,7 +46,6 @@
             <td><span style="padding-left: 10px;"><fmt:formatNumber value="${Cart.price}" pattern="###,###,###"/>원</span></td>
             <td>-</td>
             <td>기본배송</td>
-            <td><input type="radio" name="delete" value="${Cart.no}">삭제</td>
           </tr>
           </c:forEach>
         <hr>
@@ -55,7 +54,6 @@
     <hr>
   </div>
   <div id="cart" align="center">
-    <button type="submit" class="btn btn-outline-secondary">삭제</button>
     <button type="submit" class="btn btn-danger">주문하기</button>
     <button type="reset" class="btn btn-outline-secondary">취소</button>
   </div>
