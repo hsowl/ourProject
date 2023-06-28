@@ -32,7 +32,6 @@ public class orderSearchAction implements Action{
         if(request.getParameter("delete")!=null){
             delete= Integer.parseInt(request.getParameter("delete"));
             dao.deleteOrderSearch(delete);
-
         }
 
         List<OrderSearchVO> list = dao.orderSelectDate(chdate,mvo.getId());
