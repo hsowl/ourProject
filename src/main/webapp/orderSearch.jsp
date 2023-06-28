@@ -37,7 +37,7 @@
             <td style="border-left: none; border-right: none;"><img style="width: 150px;" src = ${orderSearch.image}></td>
             <td>${orderSearch.no}</td>
             <td style="text-align: left; padding-left: 10px; border-left: none; font-weight: bold;">${orderSearch.title}</td>
-            <td><span style="padding-left: 10px;"><fmt:formatNumber value="${Cart.price}" pattern="###,###,###"/>원</span></td>
+            <td><span style="padding-left: 10px;"><fmt:formatNumber value="${orderSearch.price}" pattern="###,###,###"/>원</span></td>
             <td>${orderSearch.orderDate}</td>
         </tr>
         </c:forEach>
