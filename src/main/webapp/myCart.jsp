@@ -26,7 +26,7 @@
       <%--  <table name="list" border="1px" align="center">--%>
       <thead>
       <tr>
-        <th scope="col"><input type="checkbox" name="productNo" value='selectAll' onclick='checkAllNo(this)'>전체선택</th>
+        <th scope="col"><input type="checkbox" name="no" value='selectAll' onclick='checkAllNo(this)'>전체선택</th>
         <th scope="col">상품</th>
         <th scope="col">상품명</th>
         <th scope="col">금액</th>
@@ -39,7 +39,7 @@
 
           <tr style="height: 100px;">
             <td style="text-align: left; text-align: center; border-right: #ff5a36;">
-              <input type="checkbox" name="productNo" value="${Cart.no}" >
+              <input type="checkbox" name="no" value="${Cart.no}" >
             </td>
             <td style="border-left: none; border-right: none;"><img style="width: 150px;" src = ${Cart.image}></td>
             <td style="text-align: left; padding-left: 10px; border-left: none; font-weight: bold;">${Cart.title}</td>
