@@ -6,11 +6,11 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <title>Insert title here</title>
-    <link rel="stylesheet" type="text/css" href="css/shopping.css">
+    <link rel="stylesheet" type="text/css" href="css/qna.css">
     <script type="text/javascript" src="script/board.js"></script>
 </head>
 <body>
-<div id="wrap" align="center">
+<div id="qna" align="center">
     <h1>게시글 등록</h1>
     <form name="frm" method="post" action="Servlet">
         <input type="hidden" name="command" value="boardInsert">

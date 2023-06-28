@@ -20,7 +20,25 @@
             window.open(url,name,"width=600, height=500");
         }
     </script>
-    <script type="text/javascript" src="script/cartgo.js"></script>
+    <script type="text/javascript">
+        function cartConfirmSelection() {
+            var response = confirm("장바구니에 담으시겠습니까?");
+            if (response) {
+                return true;
+            } else {
+                return false;
+            }
+        }
+        function orderConfirmSelection() {
+            var response = confirm("구매하시겠습니까?");
+            if (response) {
+                return true;
+            } else {
+                return false;
+            }
+        }
+
+    </script>
     <title>Title</title>
 </head>
 <body>
@@ -40,13 +58,17 @@
                 </tr>
                 <tr align="center">
                     <td colspan="3">
-                        <form name="form1" method="post" action="Servlet">
+                        <form name="frm1" method="post" action="Servlet">
                             <input type="hidden" name="command" value="cartUpdate">
                             <input type="hidden" name="id" value=${id.id}>
                             <input type="hidden" name="no" value=${product.no}>
-                            <input type="submit" value="장바구니에 담기" onclick="return confirmSelection()">
+                            <input type="submit" value="장바구니에 담기" onclick="return cartConfirmSelection()">
                         </form>
-                        <input type="submit" value="구매하기">
+                        <form name="frm2" method="post" action="Servlet">
+                            <input type="hidden" name="command" value="directOrderUpdate">
+                            <input type="hidden" name="no" value=${product.no}>
+                            <input type="submit" value="구매하기" onclick="return orderConfirmSelection()">
+                        </form>
                     </td>
                 </tr>
             </table>
@@ -54,9 +76,12 @@
     </tr>
 </table>
 </form>
-<div id="wrap" align="center">
+<div id="qna" align="center">
     <h1>Q&A</h1>
     <table class="list">
+        <tr>
+            <td colspan="3"><input style="text-align: left" type="button" value="게시글 등록" onclick="insert('Servlet?command=boardInsertForm&no=${product.no}','insert')"></td>
+        </tr>
         <tr>
             <th><strong>제목</strong></th>
             <th><strong>내용</strong></th>
@@ -70,14 +95,6 @@
                 <td>${board.id}</td>
             </tr>
         </c:forEach>
-        <tr>
-            <input type="button" value="게시글 등록"
-                   onclick="insert('Servlet?command=boardInsertForm&no=${product.no}','insert')">
-            <input type="button" value="게시글 수정"
-                   onclick="open_win('BoardServlet?command=board_check_pass_form&num=${board.num}', 'update')">
-            <input type="button" value="게시글 삭제"
-                   onclick="open_win('BoardServlet?command=board_check_pass_form&num=${board.num}', 'delete')">
-        </tr>
     </table>
 </div>
 </body>
