@@ -32,7 +32,7 @@
     </div>
     <div class="mb-3 d-flex align-items-center">
         <input type="text" class="form-control" name="id" placeholder="아이디 *">
-        <button type="button" class="btn btn-light" onclick="idCheck()" style="width: 100px; height: 40px; text-align: center;">중복확인</button>
+        <button type="button" class="btn btn-light" onclick="idCheck()" style="width: 120px; height: 40px; margin-left: 10px; text-align: center;">중복확인</button>
     </div>
     <div class="mb-3">
         <input type="password" class="form-control" name="pw" placeholder="비밀번호 *">
