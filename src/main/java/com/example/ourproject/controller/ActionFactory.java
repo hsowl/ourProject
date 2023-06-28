@@ -66,6 +66,8 @@ public class ActionFactory {
             action = new boardUpdateAction();
         }else if(command.equals("board_delete")){
             action = new boardDeleteAction();
+        }else if(command.equals("directOrderUpdate")){
+            action = new directOrderUpdateAction();
         }
         return action;
     }
