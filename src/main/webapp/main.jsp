@@ -148,9 +148,11 @@
                         </a>
                     </div>
                     <div class="bg-danger shadow-sm mx-auto" style="width: 100%; height: 400px; border-radius: 15px 15px 15px 15px;">
-                        <a href="Servlet?command=productDetail&no=${product.no}">
-                            <img src=${product.image}>
-                        </a>
+                        <div class="product-image">
+                            <a href="Servlet?command=productDetail&no=${product.no}">
+                                <img src=${product.image}>
+                            </a>
+                        </div>
                     </div>
                 </div>
             </div>

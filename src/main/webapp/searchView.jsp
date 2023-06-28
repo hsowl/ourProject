@@ -34,7 +34,7 @@
                     </div>
                     <div class="bg-danger shadow-sm mx-auto" style="width: 100%; height: 400px; border-radius: 21px 21px 21px 21px;">
                         <a href="Servlet?command=productDetail&no=${product.no}">
-                            <div class="product-image" >
+                            <div class="product-image">
                                 <img src=${product.image}>
                             </div>
                         </a>
