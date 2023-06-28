@@ -105,7 +105,12 @@
     function cartConfirmSelection() {
         var response = confirm("장바구니에 담으시겠습니까?");
         if (response) {
-            return true;
+            if(`${id.id}`==="") {
+                alert("로그인 후 사용 가능합니다.")
+                return false;
+            }else{
+                return true;
+            }
         } else {
             return false;
         }
@@ -114,14 +119,24 @@
     function orderConfirmSelection() {
         var response = confirm("구매하시겠습니까?");
         if (response) {
-            return true;
+            if(`${id.id}`==="") {
+                alert("로그인 후 사용 가능합니다.")
+                return false;
+            }else{
+                return true;
+            }
         } else {
             return false;
         }
     }
 
-    function insert(url, name) {
-        window.open(url, name, "width=600, height=600");
+    function insert(url,name){
+        if(`${id.id}`===""){
+            alert("로그인 후 사용 가능합니다.")
+            return false;
+        }else{
+            window.open(url,name,"width=600, height=500");
+        }
     }
 
     function view(url, name) {
