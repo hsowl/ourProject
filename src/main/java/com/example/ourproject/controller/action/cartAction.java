@@ -27,11 +27,6 @@ public class cartAction implements Action{
 
         List<CartVO> list = dao.cartSelect(mvo.getId());
 
-        int delete;
-        if(request.getParameter("delete")!=null){
-            delete= Integer.parseInt(request.getParameter("delete"));
-            dao.deleteCartRadio(delete);
-        }
 
         request.setAttribute("Cart",list);
 
