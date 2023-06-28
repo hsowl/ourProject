@@ -36,7 +36,7 @@ public class orderUpdateAction implements Action{
         }else {
             OrderSearchVO vo = new OrderSearchVO();
 
-            String[] listNo = request.getParameterValues("no");
+            String[] listNo = request.getParameterValues("productNo");
 
             //DB 저장
             for (int i = 0; i < listNo.length; i++) {
