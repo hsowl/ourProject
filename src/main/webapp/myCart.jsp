@@ -9,6 +9,7 @@
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ include file="header.jsp"%>
+<%@ include file="./include/top.jsp" %>
 <link rel="stylesheet" type="text/css" href="css/cart.css">
 <html>
 <head>
@@ -18,26 +19,48 @@
 <body>
 <form action="Servlet" method="get">
   <input type="hidden" name="command" value="orderUpdate">
-  <h2 style="background-color: #ff5a36; ">장바구니</h2>
-  <table class="list" border="1px" align="center">
-    <c:forEach var="Cart" items="${Cart}" varStatus="status">
-      <tr style="height: 90px; background-color: #f2f2f2;">
-        <td style="text-align: left; text-align: center; border-right: #ff5a36;">
-          <input type="checkbox" name="no" value="${Cart.no}">
-        </td>
-        <td style="border-left: none; border-right: none;"><img style="width: 150px;" src = ${Cart.image}></td>
-        <td style="text-align: left; padding-left: 10px; border-left: none; font-weight: bold;">${Cart.title}</td>
-        <td><span style="padding-left: 10px;"><fmt:formatNumber value="${Cart.price}" pattern="###,###,###"/>원</span></td>
-        <td>-</td>
-        <td>기본배송</td>
-      </tr>
-    </c:forEach>
+
+  <p class="h4" align="center">장바구니</p>
+  <div style="width:1000px; margin:50px auto">
+    <table class="table table-striped" name="list">
+      <%--  <table name="list" border="1px" align="center">--%>
+      <thead>
+      <tr>
+        <th scope="col">선택</th>
+        <th scope="col">상품</th>
+        <th scope="col">상품명</th>
+        <th scope="col">금액</th>
+        <th scope="col">-</th>
+        <th scope="col">배송</th>
+        <th scope="col">삭제</th>
+      </thead>
+        <tbody>
+          <c:forEach var="Cart" items="${Cart}" varStatus="status">
+
+          <tr style="height: 100px;">
+            <td style="text-align: left; text-align: center; border-right: #ff5a36;">
+              <input type="checkbox" name="no" value="${Cart.no}">
+            </td>
+            <td style="border-left: none; border-right: none;"><img style="width: 150px;" src = ${Cart.image}></td>
+            <td style="text-align: left; padding-left: 10px; border-left: none; font-weight: bold;">${Cart.title}</td>
+            <td><span style="padding-left: 10px;"><fmt:formatNumber value="${Cart.price}" pattern="###,###,###"/>원</span></td>
+            <td>-</td>
+            <td>기본배송</td>
+            <td><input type="radio" name="delete" value="${Cart.no}">삭제</td>
+          </tr>
+          </c:forEach>
+        <hr>
+        </tbody>
   </table>
+    <hr>
+  </div>
   <div id="cart" align="center">
-    <input type="submit" value="주문하기" >
-    <input type="reset" value="취소">
+    <button type="submit" class="btn btn-outline-secondary">삭제</button>
+    <button type="submit" class="btn btn-danger">주문하기</button>
+    <button type="reset" class="btn btn-outline-secondary">취소</button>
   </div>
 </form>
 </body>
 <%@ include file="footer.jsp"%>
+<%@ include file="./include/bottom.jsp" %>
 </html>
