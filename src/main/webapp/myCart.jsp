@@ -93,6 +93,7 @@
       checkboxes[i].checked = this.checked;
     }
   });
+
 </script>
 
 </script>

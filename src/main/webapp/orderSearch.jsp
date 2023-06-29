@@ -63,7 +63,6 @@
         <button type="submit" class="btn btn-danger">삭제</button>
         <button type="button" class="btn btn-outline-secondary" onclick="location='Servlet?command=main'">메인화면으로 가기</button>
     </div>
-
 </form>
 <script type="text/javascript">
     document.getElementById('select-all-delete').addEventListener('change', function() {
