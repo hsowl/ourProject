@@ -135,7 +135,7 @@
             alert("로그인 후 사용 가능합니다.")
             return false;
         }else{
-            window.open(url,name,"width=600, height=500");
+            window.open(url,name,"width=600, height=600");
         }
     }
 

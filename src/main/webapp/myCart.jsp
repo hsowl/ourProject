@@ -56,10 +56,30 @@
   </div>
   <div id="cart" align="center">
     <button type="submit" class="btn btn-danger" >삭제</button>
-    <button type="submit" class="btn btn-danger" >주문하기</button>
+    <button type="submit" class="btn btn-danger" onclick="return cartConfirm()">주문하기</button>
     <button type="reset" class="btn btn-outline-secondary">취소</button>
   </div>
 </form>
+<script type="text/javascript">
+  function cartConfirm() {
+    var checkboxes = document.getElementsByName("no");
+    var isChecked = false;
+
+    for (var i = 0; i < checkboxes.length; i++) {
+      if (checkboxes[i].checked) {
+        isChecked = true;
+        break;
+      }
+    }
+
+    if (isChecked) {
+      return true;
+    } else {
+      alert("선택하신 상품이 없습니다.");
+      return false;
+    }
+  }
+</script>
 </body>
 <%@ include file="footer.jsp"%>
 <%@ include file="./include/bottom.jsp" %>
