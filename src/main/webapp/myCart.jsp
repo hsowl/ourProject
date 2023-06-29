@@ -79,7 +79,7 @@
       return false;
     }
   }
-  <script>
+
     document.getElementById('select-all-no').addEventListener('change', function() {
     var checkboxes = document.querySelectorAll('input[name="no"]');
     for (var i = 0; i < checkboxes.length; i++) {
