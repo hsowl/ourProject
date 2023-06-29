@@ -26,7 +26,7 @@
       <%--  <table name="list" border="1px" align="center">--%>
       <thead>
       <tr>
-        <th scope="col">전체선택</th>
+        <th scope="col"><input type="checkbox" id="select-all-no">전체선택</th>
         <th scope="col">상품</th>
         <th scope="col">상품명</th>
         <th scope="col">금액</th>
@@ -79,6 +79,15 @@
       return false;
     }
   }
+  <script>
+    document.getElementById('select-all-no').addEventListener('change', function() {
+    var checkboxes = document.querySelectorAll('input[name="no"]');
+    for (var i = 0; i < checkboxes.length; i++) {
+    checkboxes[i].checked = this.checked;
+  }
+  });
+</script>
+
 </script>
 </body>
 <%@ include file="footer.jsp"%>
