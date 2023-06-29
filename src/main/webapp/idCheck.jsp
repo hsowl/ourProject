@@ -28,7 +28,7 @@
 
         <div class="mb-3">
         아이디 <input type="text" name="id" value="${id}" id="id">
-        <button type="submit" class="btn btn-outline-danger" onclick="idok()">중복확인</button>
+        <button type="submit" class="btn btn-outline-danger" onclick="idCheck()">중복확인</button>
         </div>
         <br>
 

@@ -8,6 +8,8 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+<%@ include file="./include/top.jsp" %>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
 <link rel="stylesheet" type="text/css" href="css/style.css">
 <html>
 <head>
@@ -50,7 +52,18 @@
         <div class="container">
             <ul>
                 <li><a href="Servlet?command=main">홈</a></li>
-                <li><a href="#">카테고리</a></li>
+
+                <div class="btn-group">
+                    <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        카테고리
+                    </button>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="#">Menu item</a></li>
+                        <li><a class="dropdown-item" href="#">Menu item</a></li>
+                        <li><a class="dropdown-item" href="#">Menu item</a></li>
+                    </ul>
+                </div>
+
                 <li><a href="#">베스트</a></li>
                 <li><a href="#">쇼킹딜</a></li>
                 <li><a href="#">이벤트</a></li>
@@ -77,5 +90,6 @@
     </nav>
     <hr>
 </header>
+<%@ include file="./include/bottom.jsp" %>
 </body>
 </html>
