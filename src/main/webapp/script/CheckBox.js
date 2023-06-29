@@ -1,7 +1,7 @@
-function checkAllNo(checkAllNo){
-    const  checkboxes = document.getElementsByName('productNo');
+function selectAll(selectAll){
+    const  checkboxes = document.getElementsByName('no');
 
     checkboxes.forEach((checkbox)=>{
-        checkbox.checked = checkAllNo.checked;
+        checkbox.checked = selectAll.checked;
 })
 }
