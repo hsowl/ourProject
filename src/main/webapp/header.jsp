@@ -53,17 +53,7 @@
             <ul>
                 <li><a href="Servlet?command=main">홈</a></li>
 
-                <div class="btn-group">
-                    <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                        카테고리
-                    </button>
-                    <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="#">Menu item</a></li>
-                        <li><a class="dropdown-item" href="#">Menu item</a></li>
-                        <li><a class="dropdown-item" href="#">Menu item</a></li>
-                    </ul>
-                </div>
-
+                <li><a href="#">카테고리</a></li>
                 <li><a href="#">베스트</a></li>
                 <li><a href="#">쇼킹딜</a></li>
                 <li><a href="#">이벤트</a></li>
