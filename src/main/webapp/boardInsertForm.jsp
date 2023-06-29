@@ -9,8 +9,8 @@
     <!-- 부트스트랩 CSS 링크 추가 -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
     <script type="text/javascript">
-        function close(url){
-            this.url.close(url);
+        function close(){
+            self.close();
         }
     </script>
 </head>
@@ -47,7 +47,7 @@
             </div>
         </div>
         <div class="text-center">
-            <button type="submit" class="btn btn-outline-danger" onclick="close('Servlet?command=boardInsertForm&no=${product.no}')">등록</button>
+            <button type="submit" class="btn btn-outline-danger" onclick="close()">등록</button>
             <button type="reset" class="btn btn-outline-danger">다시 작성</button>
         </div>
     </form>
