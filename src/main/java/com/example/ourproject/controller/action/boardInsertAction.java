@@ -20,6 +20,7 @@ public class boardInsertAction implements Action {
 
         DAO dao = DAO.getInstance();
         int result = dao.insertBoard(vo);
+        //오픈윈도우 여기서 숨진채 발견되다...........
 
         //list로 가주라 new BoardListAction().execute(request,response);
 //        response.sendRedirect("Servlet?command=productDetail&no=4");//list로 가주라2
