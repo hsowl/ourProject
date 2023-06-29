@@ -55,7 +55,7 @@
     </div>
 
     <button style="width:49%" type="submit" class="btn btn-danger" onclick="return joinCheck()">확인</button>
-    <button type="reset" style="width:49%" class="btn btn-light">취소</button>
+    <button type="submit" style="width:49%" class="btn btn-light" onclick="return pageBack()">취소</button>
 
     ${message}
 

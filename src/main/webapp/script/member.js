@@ -76,3 +76,7 @@ function findCheck() {
         return false;
     }
 }
+
+function pageBack(){
+    history.back();
+}
