@@ -32,7 +32,7 @@
         <th scope="col">금액</th>
         <th scope="col">-</th>
         <th scope="col">배송</th>
-        <th scope="col">삭제</th>
+        <th scope="col"><input type="checkbox" id="select-all-delete">전체삭제</th>
       </thead>
         <tbody>
           <c:forEach var="Cart" items="${Cart}" varStatus="status">
@@ -85,6 +85,13 @@
     for (var i = 0; i < checkboxes.length; i++) {
     checkboxes[i].checked = this.checked;
   }
+  });
+
+  document.getElementById('select-all-delete').addEventListener('change', function() {
+    var checkboxes = document.querySelectorAll('input[name="delete"]');
+    for (var i = 0; i < checkboxes.length; i++) {
+      checkboxes[i].checked = this.checked;
+    }
   });
 </script>
 
