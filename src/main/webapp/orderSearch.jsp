@@ -41,7 +41,7 @@
                 <th scope="col">금액</th>
                 <th scope="col">주문일자</th>
                 <th scope="col">배송</th>
-                <th scope="col">삭제</th>
+                <th scope="col"><input type="checkbox" id="select-all-delete">전체삭제</th>
             </thead>
             <tbody>
             <c:forEach var="orderSearch" items="${orderSearch}">
@@ -65,6 +65,14 @@
     </div>
 
 </form>
+<script type="text/javascript">
+    document.getElementById('select-all-delete').addEventListener('change', function() {
+        var checkboxes = document.querySelectorAll('input[name="delete"]');
+        for (var i = 0; i < checkboxes.length; i++) {
+            checkboxes[i].checked = this.checked;
+        }
+    });
+</script>
 </body>
 <%@ include file="footer.jsp"%>
 <%@ include file="./include/bottom.jsp" %>
